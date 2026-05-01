@@ -13,16 +13,10 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          ppppp
+          {siteConfig.title}
         </Heading>
+        <img src='img/dino.png' alt='dino' style={{maxWidth: '100px', borderRadius: '8px'}}/>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
       </div>
     </header>
   );
@@ -33,7 +27,7 @@ export default function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Blog técnico da compact e junção de trilhas de capacitações guiadas">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

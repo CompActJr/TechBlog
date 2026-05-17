@@ -1,0 +1,28 @@
+.viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  gap: 32px;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex: 0 0 calc((100%/3) - 32px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+
+@media screen and (max-width: 996px) {
+  .track {
+    gap: 0;
+  }
+
+  .slide {
+    flex: 0 0 calc(100%);
+  }
+}

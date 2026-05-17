@@ -1,0 +1,49 @@
+.prev,
+.next {
+  transform: translateY(-50%);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease ;
+  background-color: var(--ifm-color-secondary);
+}
+
+.prev:hover, .next:hover{
+  background: var(--ifm-color-primary);
+}
+
+.prev {
+  margin-right: 1rem;
+  position: absolute;
+  left: -2rem;
+}
+
+.next {
+  margin-left: 1rem;
+  position: absolute;
+  right: -2rem;
+}
+
+.arrowLeft {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 996px) {
+    .prev,
+    .next {
+        padding: 8px;
+    }
+
+    .prev img{
+        width: 24px;
+        height: 24px;
+    }
+
+    .next img{
+        width: 24px;
+        height: 24px;
+    }
+
+}

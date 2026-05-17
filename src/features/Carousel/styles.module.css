@@ -1,0 +1,20 @@
+.carousel {
+  position: relative;
+  margin: auto;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1080px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 996px) {
+
+  .carousel {
+    padding: 1rem;
+    width: 70%;
+  }
+
+}

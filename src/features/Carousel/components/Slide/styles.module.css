@@ -1,0 +1,38 @@
+.featureSvg {
+  max-width: 300px;
+  max-height: 200px;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info button a{
+  padding: 8px;
+}
+
+@media screen and (max-width: 996px) {
+
+  .featureSvg {
+    max-width: 180px;
+    max-height: 140px;
+  }
+
+  h3{
+    font-size: 1rem;
+  }
+
+  .info button a{
+    padding: 4px;
+  }
+
+}

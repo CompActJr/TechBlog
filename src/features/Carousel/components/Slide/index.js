@@ -10,8 +10,8 @@ export default function Slide({Svg, title, description}) {
       <div className={styles.info}>
         <p>{description}</p>
 
-        <button>
-          <Link className="button button--secondary button--lg" to="docs/intro">
+        <button className="button">
+          <Link to="docs/intro">
             {title}
           </Link>
         </button>

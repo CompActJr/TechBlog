@@ -10,13 +10,13 @@ const {siteConfig} = useDocusaurusContext();
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className={`${styles.container} ${styles.centerColumn}`}>
 
-        <h1 as="h1" className="hero__title">
+        <h1 as="h1" className={styles.title}>
           {siteConfig.title}
         </h1>
 
-        <img src={dino} alt='dino' style={{maxWidth: '100px', borderRadius: '8px'}}/>
+        <img src={dino} alt='dino' className={styles.image}/>
 
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className={styles.subtitle}>{siteConfig.tagline}</p>
       </div>
     </header>
   );

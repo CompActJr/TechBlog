@@ -3,7 +3,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Compact Tech Blog',
-  tagline: 'Seja Bem vindo a um site de tutoriais e tecnologias',
+  tagline: 'Nossos principais tutoriais e guias',
   favicon: 'img/favicon.ico',
   future: {
     v4: true,

@@ -5,13 +5,14 @@
   border: none;
   padding: 10px;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 16px;
   transition: all 0.3s ease ;
-  background-color: var(--ifm-color-secondary);
+  background-color: #ffffff32;
 }
 
 .prev:hover, .next:hover{
-  background: var(--ifm-color-primary);
+  background: #ffffff;
+  color: white;
 }
 
 .prev {

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacitação: Fundamentos de Web | CompActJr</title>
+    <!-- Reset and Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom Main CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="/index.html">
+                    <img src="/public/logo.png" alt="Logo" width="40" height="40">
+                    CompActJr TechBlog
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categorias
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item active" href="/trilhas/programacao-web/index.html">Programação Web</a></li>
+                                <li><a class="dropdown-item" href="/trilhas/devops-infra/index.html">Infraestrutura e DevOps</a></li>
+                                <li><a class="dropdown-item" href="/trilhas/desenvolvimento-backend/index.html">Desenvolvimento Backend</a></li>
+                                <li><a class="dropdown-item" href="/trilhas/ia-analise/index.html">IA e Análise de Dados</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/agradecimentos.html">Agradecimentos</a>
+                        </li>
+                    </ul>
+                    <!-- Search Box (Stubbed / Prepared) -->
+                    <form class="d-flex ms-auto search-container" role="search" onsubmit="event.preventDefault();">
+                        <input class="form-control search-input" type="search" placeholder="Pesquisar posts..." aria-label="Search" id="searchInput">
+                        <button class="search-btn" type="button" id="searchBtn">
+                            <i class="bi bi-search"></i>
+                        </button>
+                        <!-- Suggestions dropdown -->
+                        <ul class="dropdown-menu position-absolute w-100 mt-2" id="searchSuggestions" style="display: none; top: 100%;">
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container my-5">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="/trilhas/programacao-web/index.html">Programação Web</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Fundamentos de Web</li>
+            </ol>
+        </nav>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <article class="p-4 border rounded bg-white shadow-sm mb-4">
+                    <h1 class="fw-bold mb-3" style="color: var(--color-dark-blue);">Fundamentos de Web: HTML5 e CSS3</h1>
+                    <p class="text-muted small mb-4">Atualizado em Agosto de 2026 | Por: Equipe de Capacitação da CompActJr</p>
+                    
+                    <h3 class="fw-bold mt-4 mb-3" style="color: var(--color-medium-blue);">Apresentação</h3>
+                    <p>HTML5 e CSS3 são a espinha dorsal de qualquer site na internet. O HTML (HyperText Markup Language) serve para dar estrutura e significado semântico ao conteúdo da página, enquanto o CSS (Cascading Style Sheets) gerencia o estilo visual, layout, cores, fontes e responsividade para diferentes tamanhos de tela.</p>
+
+                    <h3 class="fw-bold mt-4 mb-3" style="color: var(--color-medium-blue);">O que você vai aprender</h3>
+                    <ul>
+                        <li>Tags semânticas do HTML5 (header, nav, main, section, article, footer, etc.)</li>
+                        <li>Estruturação e organização de elementos na tela</li>
+                        <li>Estilização de layouts com Flexbox e CSS Grid</li>
+                        <li>Variáveis CSS e paletas de cores centralizadas</li>
+                        <li>Criação de designs responsivos com Media Queries</li>
+                    </ul>
+
+                    <h3 class="fw-bold mt-4 mb-3" style="color: var(--color-medium-blue);">Orientações para Estudo</h3>
+                    <p>Recomendamos seguir os links de cursos e documentações ao lado. Comece entendendo a semântica do HTML para só então aplicar estilos complexos. O segredo da estilização é praticar recriando layouts simples.</p>
+                </article>
+            </div>
+
+            <!-- Sidebar / Recursos recomendados -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm p-3 mb-4 bg-light">
+                    <h5 class="fw-bold mb-3" style="color: var(--color-dark-blue);"><i class="bi bi-bookmark-star-fill me-2"></i>Recursos e Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" class="fw-bold text-decoration-none" style="color: var(--color-medium-blue);">
+                                <i class="bi bi-link-45deg me-1"></i>MDN Web Docs - HTML
+                            </a>
+                            <p class="text-muted small mb-0">Referência e documentação oficial e detalhada sobre tags HTML.</p>
+                        </li>
+                        <li class="mb-3">
+                            <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank" class="fw-bold text-decoration-none" style="color: var(--color-medium-blue);">
+                                <i class="bi bi-link-45deg me-1"></i>MDN Web Docs - CSS
+                            </a>
+                            <p class="text-muted small mb-0">Referência completa sobre propriedades e layout em CSS.</p>
+                        </li>
+                        <li class="mb-3">
+                            <a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dkZ9-8Mc9UsI5m6_SqyeCAt" target="_blank" class="fw-bold text-decoration-none" style="color: var(--color-medium-blue);">
+                                <i class="bi bi-youtube me-1 text-danger"></i>Curso em Vídeo: HTML5 & CSS3
+                            </a>
+                            <p class="text-muted small mb-0">Excelente curso gratuito em vídeo do mestre Gustavo Guanabara.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center mt-auto">
+        <div class="container">
+            <p class="mb-2">&copy; 2026 CompActJr. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://github.com/compactjr" target="_blank" aria-label="Github"><i class="bi bi-github"></i></a>
+                <a href="https://linkedin.com/company/compactjr" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Search Script (Stubbed) -->
+    <script src="/assets/js/search-stub.js"></script>
+</body>
+</html>

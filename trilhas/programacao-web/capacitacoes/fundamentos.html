@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capacitação: Fundamentos de Web | CompActJr</title>
     <!-- Reset and Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="../../../assets/css/reset.css">
     <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!-- Custom Main CSS -->
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <!-- Components CSS -->
+    <link rel="stylesheet" href="../../../assets/css/components.css">
 </head>
 <body>
 
@@ -19,8 +21,8 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center" href="./index.html">
-                    <img src="./public/logo.png" alt="Logo" width="40" height="40">
+                <a class="navbar-brand d-flex align-items-center" href="../../../index.html">
+                    <img src="../../../public/logo.png" alt="Logo" width="40" height="40">
                     CompActJr TechBlog
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,31 +31,31 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="./index.html">Home</a>
+                            <a class="nav-link" href="../../../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./blog.html">Blog</a>
+                            <a class="nav-link" href="../../../blog.html">Blog</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Categorias
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item active" href="./trilhas/programacao-web/index.html">Programação Web</a></li>
-                                <li><a class="dropdown-item" href="./trilhas/devops-infra/index.html">Infraestrutura e DevOps</a></li>
-                                <li><a class="dropdown-item" href="./trilhas/desenvolvimento-backend/index.html">Desenvolvimento Backend</a></li>
-                                <li><a class="dropdown-item" href="./trilhas/ia-analise/index.html">IA e Análise de Dados</a></li>
+                                <li><a class="dropdown-item active" href="../../../trilhas/programacao-web/index.html">Programação Web</a></li>
+                                <li><a class="dropdown-item" href="../../../trilhas/devops-infra/index.html">Infraestrutura e DevOps</a></li>
+                                <li><a class="dropdown-item" href="../../../trilhas/desenvolvimento-backend/index.html">Desenvolvimento Backend</a></li>
+                                <li><a class="dropdown-item" href="../../../trilhas/ia-analise/index.html">IA e Análise de Dados</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./agradecimentos.html">Agradecimentos</a>
+                            <a class="nav-link" href="../../../agradecimentos.html">Agradecimentos</a>
                         </li>
                     </ul>
                     <!-- Search Box (Stubbed / Prepared) -->
                     <form class="d-flex ms-auto search-container" role="search" onsubmit="event.preventDefault();">
                         <input class="form-control search-input" type="search" placeholder="Pesquisar posts..." aria-label="Search" id="searchInput">
                         <button class="search-btn" type="button" id="searchBtn">
-                            <i class="bi bi-search"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                         <!-- Suggestions dropdown -->
                         <ul class="dropdown-menu position-absolute w-100 mt-2" id="searchSuggestions" style="display: none; top: 100%;">
@@ -69,78 +71,952 @@
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="./trilhas/programacao-web/index.html">Programação Web</a></li>
+                <li class="breadcrumb-item"><a href="../../../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="../index.html">Programação Web</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Fundamentos de Web</li>
             </ol>
         </nav>
 
-        <div class="row">
-            <div class="col-lg-8">
+        <div class="capacitacao-layout">
+
+                <!-- Cabeçalho da capacitação -->
                 <article class="p-4 border rounded bg-white shadow-sm mb-4">
-                    <h1 class="fw-bold mb-3" style="color: var(--color-dark-blue);">Fundamentos de Web: HTML5 e CSS3</h1>
-                    <p class="text-muted small mb-4">Atualizado em Agosto de 2026 | Por: Equipe de Capacitação da CompActJr</p>
-                    
-                    <h3 class="fw-bold mt-4 mb-3" style="color: var(--color-medium-blue);">Apresentação</h3>
-                    <p>HTML5 e CSS3 são a espinha dorsal de qualquer site na internet. O HTML (HyperText Markup Language) serve para dar estrutura e significado semântico ao conteúdo da página, enquanto o CSS (Cascading Style Sheets) gerencia o estilo visual, layout, cores, fontes e responsividade para diferentes tamanhos de tela.</p>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fa-brands fa-html5 display-4 me-3" style="color: var(--color-light-blue);"></i>
+                        <div>
+                            <h1 class="fw-bold mb-0" style="color: var(--color-dark-blue);">Fundamentos de Web: HTML5, CSS3 e o início do JavaScript</h1>
+                            <p class="text-muted small mb-0">Atualizado em Agosto de 2026 | Por: Equipe de Capacitação da CompActJr</p>
+                        </div>
+                    </div>
 
-                    <h3 class="fw-bold mt-4 mb-3" style="color: var(--color-medium-blue);">O que você vai aprender</h3>
-                    <ul>
-                        <li>Tags semânticas do HTML5 (header, nav, main, section, article, footer, etc.)</li>
-                        <li>Estruturação e organização de elementos na tela</li>
-                        <li>Estilização de layouts com Flexbox e CSS Grid</li>
-                        <li>Variáveis CSS e paletas de cores centralizadas</li>
-                        <li>Criação de designs responsivos com Media Queries</li>
+                    <!-- Introdução -->
+                    <h3 class="fw-bold mt-4 mb-2" style="color: var(--color-medium-blue);"><i class="fa-solid fa-lightbulb me-2"></i>Introdução</h3>
+                    <p>Antes de escrever a primeira linha de código, é essencial entender de onde veio a web, qual o seu propósito e como essas tecnologias funcionam juntas. Esta capacitação guia você, passo a passo, da <strong>história da criação da web</strong> até o <strong>básico de JavaScript</strong>, passando por HTML (a estrutura) e CSS (o estilo). Toda a teoria vem acompanhada de exemplos de código prontos para você <strong>estudar e aplicar</strong> nos seus projetos.</p>
+
+                    <!-- Sumário do que será aprendido -->
+                    <h3 class="fw-bold mt-4 mb-2" style="color: var(--color-medium-blue);"><i class="fa-solid fa-list-check me-2"></i>O que você vai aprender</h3>
+                    <ul class="mb-2">
+                        <li><strong>História da Web:</strong> como e por que a web nasceu, quem a criou e qual o seu objetivo.</li>
+                        <li><strong>HTML:</strong> conceitos, como o navegador interpreta as páginas, todas as tags mais utilizadas com exemplos de código editáveis e testáveis, e o seu primeiro Hello World.</li>
+                        <li><strong>CSS:</strong> como estilizar e posicionar elementos, com exemplos práticos de cores, fontes e layout.</li>
+                        <li><strong>JavaScript:</strong> os primeiros passos da linguagem de programação que dá vida às páginas, com exemplos interativos.</li>
                     </ul>
-
-                    <h3 class="fw-bold mt-4 mb-3" style="color: var(--color-medium-blue);">Orientações para Estudo</h3>
-                    <p>Recomendamos seguir os links de cursos e documentações ao lado. Comece entendendo a semântica do HTML para só então aplicar estilos complexos. O segredo da estilização é praticar recriando layouts simples.</p>
+                    <p class="mb-0">Ao final, você será capaz de construir e entender a estrutura de uma página web simples com conteúdo, estilo e interatividade básica.</p>
                 </article>
-            </div>
 
-            <!-- Sidebar / Recursos recomendados -->
-            <div class="col-lg-4">
-                <div class="card border-0 shadow-sm p-3 mb-4 bg-light">
-                    <h5 class="fw-bold mb-3" style="color: var(--color-dark-blue);"><i class="bi bi-bookmark-star-fill me-2"></i>Recursos e Links</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-3">
-                            <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" class="fw-bold text-decoration-none" style="color: var(--color-medium-blue);">
-                                <i class="bi bi-link-45deg me-1"></i>MDN Web Docs - HTML
-                            </a>
-                            <p class="text-muted small mb-0">Referência e documentação oficial e detalhada sobre tags HTML.</p>
+                <!-- Linha do tempo dos conteúdos -->
+                <div class="p-4 border rounded bg-white shadow-sm mb-4">
+                    <div class="d-flex align-items-center mb-1">
+                        <i class="fa-solid fa-signs-post me-2 display-6" style="color: var(--color-light-blue);"></i>
+                        <h3 class="fw-bold mb-0" style="color: var(--color-dark-blue);">Linha do Tempo dos Conteúdos</h3>
+                    </div>
+                    <p class="text-muted mb-2">Clique em um passo da linha do tempo para carregar o conteúdo abaixo. Arraste para o lado ou use as setas.</p>
+
+                    <div class="timeline-wrapper mb-3">
+                        <button type="button" class="timeline-nav timeline-prev" data-timeline-control="contentTimeline" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+
+                        <div class="timeline-scroll" id="contentTimeline" data-timeline>
+                            <!-- Passo 1: História -->
+                            <div class="timeline-item active" data-section="historia" role="button" tabindex="0" aria-label="História da Web">
+                                <div class="tl-node"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                                <div class="tl-card">
+                                    <span class="badge tl-badge mb-2" style="background-color: var(--color-light-blue);">Comece aqui</span>
+                                    <h5>História da Web</h5>
+                                    <p>Conheça a origem, o objetivo e a evolução da internet até a web atual.</p>
+                                </div>
+                            </div>
+
+                            <!-- Passo 2: HTML -->
+                            <div class="timeline-item" data-section="html" role="button" tabindex="0" aria-label="HTML">
+                                <div class="tl-node tl-node-html"><i class="fa-brands fa-html5"></i></div>
+                                <div class="tl-card">
+                                    <span class="badge tl-badge mb-2" style="background-color: var(--color-light-blue);">Estrutura</span>
+                                    <h5>HTML</h5>
+                                    <p>Conceitos, como funciona, as principais tags com exemplos e o Hello World.</p>
+                                </div>
+                            </div>
+
+                            <!-- Passo 3: CSS -->
+                            <div class="timeline-item" data-section="css" role="button" tabindex="0" aria-label="CSS">
+                                <div class="tl-node tl-node-css"><i class="fa-brands fa-css3-alt"></i></div>
+                                <div class="tl-card">
+                                    <span class="badge tl-badge mb-2" style="background-color: var(--color-medium-blue);">Estilo</span>
+                                    <h5>CSS</h5>
+                                    <p>Dê cor, fonte e layout às suas páginas com folhas de estilo em cascata.</p>
+                                </div>
+                            </div>
+
+                            <!-- Passo 4: JavaScript -->
+                            <div class="timeline-item" data-section="js" role="button" tabindex="0" aria-label="JavaScript">
+                                <div class="tl-node tl-node-js"><i class="fa-brands fa-js"></i></div>
+                                <div class="tl-card">
+                                    <span class="badge tl-badge mb-2" style="background-color: var(--color-purple);">Interatividade</span>
+                                    <h5>JavaScript</h5>
+                                    <p>Os primeiros passos da linguagem de programação que dá vida às páginas.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="timeline-nav timeline-next" data-timeline-control="contentTimeline" aria-label="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- ========== HISTÓRIA ========== -->
+                <article id="historia" class="cap-section active p-4 border rounded bg-white shadow-sm mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fa-solid fa-book-open display-4 me-3" style="color: var(--color-light-blue);"></i>
+                        <h2 class="fw-bold mb-0" style="color: var(--color-dark-blue);">1. História da Web</h2>
+                    </div>
+                    <p>A web (World Wide Web) é um sistema de informação baseado em <strong>hipertexto</strong> — ou seja, documentos ligados entre si por <em>links</em>. Ela nasceu com um objetivo claro: <strong>permitir que pessoas compartilhassem e acessassem informações de qualquer lugar do mundo</strong>, de forma simples e aberta. A web roda sobre a internet (a rede física de computadores), mas é apenas uma das aplicações que usam essa rede.</p>
+
+                    <!-- Componente YouTube: os links vêm do JSON central assets/data/resources.js
+                         (chave "historia-da-web"). Edite lá para trocar os vídeos. -->
+                    <button type="button" class="yt-card mb-4" data-yt-comp data-key="historia-da-web"
+                            data-title="Vídeos e Materiais — História da Web">
+                        <div class="yt-card-icon"><i class="fa-brands fa-youtube"></i></div>
+                        <div class="yt-card-body">
+                            <h5 class="yt-card-title">Vídeos e Materiais — História da Web</h5>
+                            <p class="yt-card-text">Clique para ver a lista e assistir os vídeos embutidos aqui mesmo.</p>
+                        </div>
+                        <div class="yt-card-count"><span data-yt-count>0</span> materiais</div>
+                    </button>
+
+                    <h4 class="fw-bold mt-4 mb-3" style="color: var(--color-medium-blue);">Linha do tempo da criação e evolução</h4>
+                    <ul class="vertical-timeline">
+                        <li>
+                            <span class="year">1969</span>
+                            <br>
+                            <span class="desc">Surge a <strong>ARPANET</strong>, a rede precursora da internet, criada por pesquisadores nos Estados Unidos.</span>
                         </li>
-                        <li class="mb-3">
-                            <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank" class="fw-bold text-decoration-none" style="color: var(--color-medium-blue);">
-                                <i class="bi bi-link-45deg me-1"></i>MDN Web Docs - CSS
-                            </a>
-                            <p class="text-muted small mb-0">Referência completa sobre propriedades e layout em CSS.</p>
+                        <li>
+                            <span class="year">1989</span>
+                            <br>
+                            <span class="desc">O britânico <strong>Tim Berners-Lee</strong>, trabalhando no CERN (Suíça), propõe o sistema que viraria a World Wide Web para compartilhar documentos científicos.</span>
                         </li>
-                        <li class="mb-3">
-                            <a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dkZ9-8Mc9UsI5m6_SqyeCAt" target="_blank" class="fw-bold text-decoration-none" style="color: var(--color-medium-blue);">
-                                <i class="bi bi-youtube me-1 text-danger"></i>Curso em Vídeo: HTML5 & CSS3
-                            </a>
-                            <p class="text-muted small mb-0">Excelente curso gratuito em vídeo do mestre Gustavo Guanabara.</p>
+                        <li>
+                            <span class="year">1990</span>
+                            <br>
+                            <span class="desc">Berners-Lee cria o <strong>primeiro navegador</strong> e o <strong>primeiro servidor web</strong>, além de escrever o HTML — a linguagem de marcação que estrutura as páginas.</span>
+                        </li>
+                        <li>
+                            <span class="year">1991</span>
+                            <br>
+                            <span class="desc">O <strong>primeiro site da história</strong> (info.cern.ch) entra no ar explicando o que era a web e como criar páginas.</span>
+                        </li>
+                        <li>
+                            <span class="year">1993</span>
+                            <br>
+                            <span class="desc">O navegador <strong>Mosaic</strong> populariza a web ao exibir imagens dentro das páginas, abrindo o caminho para o grande público.</span>
+                        </li>
+                        <li>
+                            <span class="year">1995</span>
+                            <br>
+                            <span class="desc"><strong>JavaScript</strong> é criado por Brendan Eich em apenas 10 dias, dentro do navegador Netscape, para dar interatividade às páginas.</span>
+                        </li>
+                        <li>
+                            <span class="year">1996</span>
+                            <br>
+                            <span class="desc">O <strong>CSS</strong> (Cascading Style Sheets) é padronizado para separar a estrutura do conteúdo da sua apresentação visual.</span>
+                        </li>
+                        <li>
+                            <span class="year">2014</span>
+                            <br>
+                            <span class="desc">O <strong>HTML5</strong> se torna recomendação oficial, adicionando tags semânticas, áudio/vídeo nativo e mais recursos para aplicações modernas.</span>
+                        </li>
+                        <li>
+                            <span class="year">Hoje</span>
+                            <br>
+                            <span class="desc">A web evoluiu de páginas estáticas para uma <strong>plataforma completa</strong>: aplicativos, comércio, educação, jogos e muito mais, tudo dentro do navegador.</span>
                         </li>
                     </ul>
+
+                    <div class="alert alert-info mt-4 mb-0">
+                        <i class="fa-solid fa-circle-info me-2"></i>
+                        <strong>Ponto chave:</strong> HTML estrutura, CSS estiliza e JavaScript dá comportamento. Atrás delas está a web: aberta, gratuita e universal. Entender o "porquê" ajuda a entender o "como".
+                    </div>
+                </article>
+
+                <!-- ========== HTML ========== -->
+                <article id="html" class="cap-section p-4 border rounded bg-white shadow-sm mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fa-brands fa-html5 display-4 me-3" style="color: var(--color-light-blue);"></i>
+                        <h2 class="fw-bold mb-0" style="color: var(--color-dark-blue);">2. HTML — A Estrutura da Página</h2>
+                    </div>
+
+                    <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que é HTML?</h4>
+                    <p><strong>HTML (HyperText Markup Language)</strong> é a linguagem de marcação usada para estruturar o conteúdo da web. Ele <strong>não é uma linguagem de programação</strong>: ele não executa lógica, apenas <em>descreve</em> o que cada parte da página representa — títulos, parágrafos, imagens, links, listas, tabelas e formulários. Essa descrição é interpretada pelo navegador, que a transforma em elementos visuais.</p>
+
+                    <h4 class="fw-bold mt-4 mb-2" style="color: var(--color-medium-blue);">Como funciona</h4>
+                    <p>O navegador lê o arquivo HTML <strong>de cima para baixo</strong> e monta uma estrutura em árvore chamada <strong>DOM (Document Object Model)</strong>. Cada pedaço de conteúdo é delimitado por <strong>tags</strong> — palavras-chave entre colchetes angulares. A maioria das tags possui abertura e fechamento:</p>
+                    <pre class="bg-light p-3 rounded"><code>&lt;tag atributo="valor"&gt;conteúdo&lt;/tag&gt;</code></pre>
+                    <p>Existem também <strong>tags vazias</strong> (auto-fecháveis), que não possuem conteúdo interno, como <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code> e <code>&lt;input&gt;</code>. Os <strong>atributos</strong> fornecem informações extras, como o caminho de uma imagem (<code>src</code>) ou o texto alternativo (<code>alt</code>).</p>
+
+                    <h4 class="fw-bold mt-4 mb-2" style="color: var(--color-medium-blue);">Estrutura básica de um documento</h4>
+                    <pre class="bg-light p-3 rounded"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Título da página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    <ul class="mb-0">
+                        <li><code>&lt;!DOCTYPE html&gt;</code> — informa ao navegador que o documento usa HTML5.</li>
+                        <li><code>&lt;head&gt;</code> — metadados (não aparece na tela): charset, título, estilos e links.</li>
+                        <li><code>&lt;body&gt;</code> — todo o conteúdo visível da página.</li>
+                    </ul>
+
+                    <h4 class="fw-bold mt-4 mb-3" style="color: var(--color-medium-blue);">Referência de tags com exemplos editáveis e testáveis</h4>
+                    <p class="text-muted">As tags mais utilizadas do HTML, organizadas por categoria. Cada categoria traz uma <strong>tabela de referência</strong> e um <strong>exemplo completo de código</strong> logo abaixo.</p>
+
+                    <div class="accordion" id="tagsAccordion">
+                        <!-- Categoria: Estrutura do documento -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="catEstrutura">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#catEstruturaBody" aria-expanded="true" aria-controls="catEstruturaBody">
+                                    <i class="fa-solid fa-file-code me-2"></i> Estrutura do documento
+                                </button>
+                            </h2>
+                            <div id="catEstruturaBody" class="accordion-collapse collapse show" aria-labelledby="catEstrutura" data-bs-parent="#tagsAccordion">
+                                <div class="accordion-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped align-middle">
+                                            <thead><tr><th>Tag</th><th>O que faz</th><th>Exemplo</th></tr></thead>
+                                            <tbody>
+                                                <tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Declara o documento como HTML5</td><td><code>&lt;!DOCTYPE html&gt;</code></td></tr>
+                                                <tr><td><code>&lt;html&gt;</code></td><td>Elemento raiz de toda a página</td><td><code>&lt;html lang="pt-BR"&gt;</code></td></tr>
+                                                <tr><td><code>&lt;head&gt;</code></td><td>Metadados e configurações da página</td><td><code>&lt;head&gt; ... &lt;/head&gt;</code></td></tr>
+                                                <tr><td><code>&lt;meta&gt;</code></td><td>Metadados (charset, viewport, SEO)</td><td><code>&lt;meta charset="UTF-8"&gt;</code></td></tr>
+                                                <tr><td><code>&lt;title&gt;</code></td><td>Título exibido na aba do navegador</td><td><code>&lt;title&gt;Home&lt;/title&gt;</code></td></tr>
+                                                <tr><td><code>&lt;link&gt;</code></td><td>Vincula recursos externos (ex.: CSS)</td><td><code>&lt;link rel="stylesheet" href="estilo.css"&gt;</code></td></tr>
+                                                <tr><td><code>&lt;style&gt;</code></td><td>Define estilos CSS dentro da página</td><td><code>&lt;style&gt;body { color: red; }&lt;/style&gt;</code></td></tr>
+                                                <tr><td><code>&lt;base&gt;</code></td><td>Define a URL base dos links relativos</td><td><code>&lt;base href="https://site.com/"&gt;</code></td></tr>
+                                                <tr><td><code>&lt;body&gt;</code></td><td>Contém todo o conteúdo visível</td><td><code>&lt;body&gt; ... &lt;/body&gt;</code></td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Estrutura do documento&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: sans-serif; text-align: center; padding: 2rem; }
+    h1 { color: #00a7db; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Minha primeira página&lt;/h1&gt;
+  &lt;p&gt;Todo o conteúdo visível fica dentro da tag &amp;lt;body&amp;gt;.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Categoria: Seções -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="catSeccoes">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#catSeccoesBody" aria-expanded="false" aria-controls="catSeccoesBody">
+                                    <i class="fa-solid fa-table-columns me-2"></i> Seções e semântica
+                                </button>
+                            </h2>
+                            <div id="catSeccoesBody" class="accordion-collapse collapse" aria-labelledby="catSeccoes" data-bs-parent="#tagsAccordion">
+                                <div class="accordion-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped align-middle">
+                                            <thead><tr><th>Tag</th><th>O que faz</th><th>Exemplo</th></tr></thead>
+                                            <tbody>
+                                                <tr><td><code>&lt;header&gt;</code></td><td>Cabeçalho de uma seção ou da página</td><td><code>&lt;header&gt;&lt;h1&gt;Logo&lt;/h1&gt;&lt;/header&gt;</code></td></tr>
+                                                <tr><td><code>&lt;nav&gt;</code></td><td>Agrupa links de navegação</td><td><code>&lt;nav&gt;&lt;a href="#"&gt;Início&lt;/a&gt;&lt;/nav&gt;</code></td></tr>
+                                                <tr><td><code>&lt;main&gt;</code></td><td>Conteúdo principal e único da página</td><td><code>&lt;main&gt;...&lt;/main&gt;</code></td></tr>
+                                                <tr><td><code>&lt;section&gt;</code></td><td>Seção temática do conteúdo</td><td><code>&lt;section&gt;&lt;h2&gt;Notícias&lt;/h2&gt;&lt;/section&gt;</code></td></tr>
+                                                <tr><td><code>&lt;article&gt;</code></td><td>Conteúdo independente (post, notícia)</td><td><code>&lt;article&gt;...&lt;/article&gt;</code></td></tr>
+                                                <tr><td><code>&lt;aside&gt;</code></td><td>Conteúdo complementar/lateral</td><td><code>&lt;aside&gt;Propagandas&lt;/aside&gt;</code></td></tr>
+                                                <tr><td><code>&lt;footer&gt;</code></td><td>Rodapé de uma seção ou da página</td><td><code>&lt;footer&gt;© 2026&lt;/footer&gt;</code></td></tr>
+                                                <tr><td><code>&lt;h1&gt;–&lt;h6&gt;</code></td><td>Títulos com hierarquia de importância</td><td><code>&lt;h1&gt;Título principal&lt;/h1&gt;</code></td></tr>
+                                                <tr><td><code>&lt;address&gt;</code></td><td>Informações de contato</td><td><code>&lt;address&gt;contato@cmp.com&lt;/address&gt;</code></td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Seções&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: sans-serif; margin: 0; }
+    header, footer { background: #1c314c; color: #fff; padding: 1rem; }
+    main { display: flex; gap: 1rem; padding: 1rem; }
+    section { flex: 2; background: #eef; padding: 1rem; }
+    aside { flex: 1; background: #fdf; padding: 1rem; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Meu Site&lt;/h1&gt;
+    &lt;nav&gt;&lt;a href="#" style="color:#00a7db;"&gt;Início&lt;/a&gt; | &lt;a href="#" style="color:#00a7db;"&gt;Sobre&lt;/a&gt;&lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Artigo principal&lt;/h2&gt;
+      &lt;article&gt;&lt;h3&gt;Subtítulo&lt;/h3&gt;&lt;p&gt;Conteúdo independente da página.&lt;/p&gt;&lt;/article&gt;
+    &lt;/section&gt;
+    &lt;aside&gt;Conteúdo complementar (barra lateral).&lt;/aside&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;&amp;copy; 2026 CompActJr&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Categoria: Agrupamento -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="catAgrup">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#catAgrupBody" aria-expanded="false" aria-controls="catAgrupBody">
+                                    <i class="fa-solid fa-list-ul me-2"></i> Conteúdo e agrupamento
+                                </button>
+                            </h2>
+                            <div id="catAgrupBody" class="accordion-collapse collapse" aria-labelledby="catAgrup" data-bs-parent="#tagsAccordion">
+                                <div class="accordion-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped align-middle">
+                                            <thead><tr><th>Tag</th><th>O que faz</th><th>Exemplo</th></tr></thead>
+                                            <tbody>
+                                                <tr><td><code>&lt;p&gt;</code></td><td>Parágrafo de texto</td><td><code>&lt;p&gt;Olá mundo&lt;/p&gt;</code></td></tr>
+                                                <tr><td><code>&lt;hr&gt;</code></td><td>Linha divisória horizontal</td><td><code>&lt;hr&gt;</code></td></tr>
+                                                <tr><td><code>&lt;pre&gt;</code></td><td>Texto pré-formatado (mantém espaços)</td><td><code>&lt;pre&gt;código&lt;/pre&gt;</code></td></tr>
+                                                <tr><td><code>&lt;blockquote&gt;</code></td><td>Citação longa em bloco</td><td><code>&lt;blockquote cite="url"&gt;...&lt;/blockquote&gt;</code></td></tr>
+                                                <tr><td><code>&lt;ol&gt;</code></td><td>Lista ordenada (numerada)</td><td><code>&lt;ol&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ol&gt;</code></td></tr>
+                                                <tr><td><code>&lt;ul&gt;</code></td><td>Lista não ordenada</td><td><code>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code></td></tr>
+                                                <tr><td><code>&lt;li&gt;</code></td><td>Item de uma lista</td><td><code>&lt;li&gt;Item da lista&lt;/li&gt;</code></td></tr>
+                                                <tr><td><code>&lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</code></td><td>Lista de descrição (termo + definição)</td><td><code>&lt;dt&gt;HTML&lt;/dt&gt;&lt;dd&gt;Linguagem de marcação&lt;/dd&gt;</code></td></tr>
+                                                <tr><td><code>&lt;figure&gt; / &lt;figcaption&gt;</code></td><td>Ilustração com legenda</td><td><code>&lt;figure&gt;&lt;img ...&gt;&lt;figcaption&gt;Legenda&lt;/figcaption&gt;&lt;/figure&gt;</code></td></tr>
+                                                <tr><td><code>&lt;div&gt;</code></td><td>Contêiner bloco genérico</td><td><code>&lt;div class="caixa"&gt;...&lt;/div&gt;</code></td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Agrupamento&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: sans-serif; padding: 1rem; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h3&gt;Lista ordenada&lt;/h3&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Primeiro&lt;/li&gt;
+    &lt;li&gt;Segundo&lt;/li&gt;
+    &lt;li&gt;Terceiro&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;h3&gt;Lista não ordenada&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Item A&lt;/li&gt;
+    &lt;li&gt;Item B&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h3&gt;Lista de definição&lt;/h3&gt;
+  &lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;Estrutura o conteúdo da página.&lt;/dd&gt;
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Estiliza o conteúdo da página.&lt;/dd&gt;
+  &lt;/dl&gt;
+  &lt;h3&gt;Citação em bloco&lt;/h3&gt;
+  &lt;blockquote cite="https://developer.mozilla.org/pt-BR/docs/Web/HTML"&gt;
+    &amp;quot;O HTML não é uma linguagem de programação.&amp;quot;
+  &lt;/blockquote&gt;
+  &lt;figure&gt;
+    &lt;pre&gt;código pré-formatado&lt;/pre&gt;
+    &lt;figcaption&gt;Legenda da figura&lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Categoria: Texto -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="catTexto">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#catTextoBody" aria-expanded="false" aria-controls="catTextoBody">
+                                    <i class="fa-solid fa-font me-2"></i> Texto e elementos inline
+                                </button>
+                            </h2>
+                            <div id="catTextoBody" class="accordion-collapse collapse" aria-labelledby="catTexto" data-bs-parent="#tagsAccordion">
+                                <div class="accordion-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped align-middle">
+                                            <thead><tr><th>Tag</th><th>O que faz</th><th>Exemplo</th></tr></thead>
+                                            <tbody>
+                                                <tr><td><code>&lt;a&gt;</code></td><td>Cria um link (âncora)</td><td><code>&lt;a href="https://site.com"&gt;clique aqui&lt;/a&gt;</code></td></tr>
+                                                <tr><td><code>&lt;em&gt;</code></td><td>Ênfase (itálico semântico)</td><td><code>&lt;em&gt;importante&lt;/em&gt;</code></td></tr>
+                                                <tr><td><code>&lt;strong&gt;</code></td><td>Importância (negrito semântico)</td><td><code>&lt;strong&gt;atenção&lt;/strong&gt;</code></td></tr>
+                                                <tr><td><code>&lt;small&gt;</code></td><td>Comentário/letras pequenas</td><td><code>&lt;small&gt;&copy; 2026&lt;/small&gt;</code></td></tr>
+                                                <tr><td><code>&lt;s&gt;</code></td><td>Texto riscado (não mais válido)</td><td><code>&lt;s&gt;R$ 99&lt;/s&gt;</code></td></tr>
+                                                <tr><td><code>&lt;cite&gt;</code></td><td>Título de uma obra citada</td><td><code>&lt;cite&gt;Dom Casmurro&lt;/cite&gt;</code></td></tr>
+                                                <tr><td><code>&lt;q&gt;</code></td><td>Citação curta inline</td><td><code>&lt;q&gt;citação&lt;/q&gt;</code></td></tr>
+                                                <tr><td><code>&lt;abbr&gt;</code></td><td>Abreviação com legenda</td><td><code>&lt;abbr title="HyperText"&gt;HTML&lt;/abbr&gt;</code></td></tr>
+                                                <tr><td><code>&lt;time&gt;</code></td><td>Data/hora legível para máquinas</td><td><code>&lt;time datetime="2026-08-12"&gt;12/08/2026&lt;/time&gt;</code></td></tr>
+                                                <tr><td><code>&lt;code&gt;</code></td><td>Trecho de código fonte</td><td><code>&lt;code&gt;let x = 1;&lt;/code&gt;</code></td></tr>
+                                                <tr><td><code>&lt;kbd&gt;</code></td><td>Entrada do teclado</td><td><code>&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;C&lt;/kbd&gt;</code></td></tr>
+                                                <tr><td><code>&lt;var&gt;</code></td><td>Variável em contexto técnico</td><td><code>&lt;var&gt;x&lt;/var&gt;</code></td></tr>
+                                                <tr><td><code>&lt;samp&gt;</code></td><td>Saída de um programa</td><td><code>&lt;samp&gt;Erro 404&lt;/samp&gt;</code></td></tr>
+                                                <tr><td><code>&lt;sub&gt;</code></td><td>Subscrito (ex.: H₂O)</td><td><code>H&lt;sub&gt;2&lt;/sub&gt;O</code></td></tr>
+                                                <tr><td><code>&lt;sup&gt;</code></td><td>Sobrescrito (ex.: 10²)</td><td><code>10&lt;sup&gt;2&lt;/sup&gt;</code></td></tr>
+                                                <tr><td><code>&lt;i&gt;</code></td><td>Itálico (termo técnico/idioma)</td><td><code>&lt;i&gt;et al.&lt;/i&gt;</code></td></tr>
+                                                <tr><td><code>&lt;b&gt;</code></td><td>Negrito (sem relevância semântica)</td><td><code>&lt;b&gt;palavra-chave&lt;/b&gt;</code></td></tr>
+                                                <tr><td><code>&lt;u&gt;</code></td><td>Sublinhado</td><td><code>&lt;u&gt;sublinhado&lt;/u&gt;</code></td></tr>
+                                                <tr><td><code>&lt;mark&gt;</code></td><td>Texto destacado (marca-texto)</td><td><code>&lt;mark&gt;grifado&lt;/mark&gt;</code></td></tr>
+                                                <tr><td><code>&lt;span&gt;</code></td><td>Contêiner inline genérico</td><td><code>&lt;span class="destaque"&gt;...&lt;/span&gt;</code></td></tr>
+                                                <tr><td><code>&lt;br&gt;</code></td><td>Quebra de linha</td><td><code>linha 1&lt;br&gt;linha 2</code></td></tr>
+                                                <tr><td><code>&lt;wbr&gt;</code></td><td>Ponto permitido de quebra de palavra</td><td><code>super&lt;wbr&gt;longaPalavra</code></td></tr>
+                                                <tr><td><code>&lt;data&gt;</code></td><td>Valor legível para máquinas</td><td><code>&lt;data value="12"&gt;Doze&lt;/data&gt;</code></td></tr>
+                                                <tr><td><code>&lt;bdi&gt; / &lt;bdo&gt;</code></td><td>Isolamento/direção de texto</td><td><code>&lt;bdo dir="rtl"&gt;texto&lt;/bdo&gt;</code></td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Texto e elementos inline&lt;/title&gt;
+&lt;/head&gt;
+&lt;body style="font-family: sans-serif; line-height: 1.9; padding: 1rem;"&gt;
+  &lt;p&gt;Visite o &lt;a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"&gt;MDN&lt;/a&gt; para aprender.&lt;/p&gt;
+  &lt;p&gt;Isto é &lt;em&gt;ênfase&lt;/em&gt; e isto é &lt;strong&gt;importante&lt;/strong&gt;.&lt;/p&gt;
+  &lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O e 10&lt;sup&gt;2&lt;/sup&gt; = 100.&lt;/p&gt;
+  &lt;p&gt;Use &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt; para salvar.&lt;/p&gt;
+  &lt;p&gt;O exemplo &lt;code&gt;let x = 10;&lt;/code&gt; é JavaScript.&lt;/p&gt;
+  &lt;p&gt;Preço antigo: &lt;s&gt;R$ 99&lt;/s&gt; — agora &lt;mark&gt;R$ 49&lt;/mark&gt;.&lt;/p&gt;
+  &lt;p&gt;&lt;abbr title="World Wide Web"&gt;WWW&lt;/abbr&gt; significa World Wide Web.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Categoria: Mídia -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="catMidia">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#catMidiaBody" aria-expanded="false" aria-controls="catMidiaBody">
+                                    <i class="fa-solid fa-images me-2"></i> Mídia incorporada
+                                </button>
+                            </h2>
+                            <div id="catMidiaBody" class="accordion-collapse collapse" aria-labelledby="catMidia" data-bs-parent="#tagsAccordion">
+                                <div class="accordion-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped align-middle">
+                                            <thead><tr><th>Tag</th><th>O que faz</th><th>Exemplo</th></tr></thead>
+                                            <tbody>
+                                                <tr><td><code>&lt;img&gt;</code></td><td>Exibe uma imagem</td><td><code>&lt;img src="foto.jpg" alt="Descrição"&gt;</code></td></tr>
+                                                <tr><td><code>&lt;picture&gt;</code></td><td>Imagem responsiva com múltiplas fontes</td><td><code>&lt;picture&gt;&lt;source srcset="..."&gt;&lt;img ...&gt;&lt;/picture&gt;</code></td></tr>
+                                                <tr><td><code>&lt;source&gt;</code></td><td>Define fontes para picture/audio/video</td><td><code>&lt;source src="a.mp4" type="video/mp4"&gt;</code></td></tr>
+                                                <tr><td><code>&lt;audio&gt;</code></td><td>Reproduz áudio</td><td><code>&lt;audio controls src="musica.mp3"&gt;&lt;/audio&gt;</code></td></tr>
+                                                <tr><td><code>&lt;video&gt;</code></td><td>Reproduz vídeo</td><td><code>&lt;video controls src="filme.mp4"&gt;&lt;/video&gt;</code></td></tr>
+                                                <tr><td><code>&lt;track&gt;</code></td><td>Legendas de mídia</td><td><code>&lt;track kind="subtitles" src="leg.srt"&gt;</code></td></tr>
+                                                <tr><td><code>&lt;iframe&gt;</code></td><td>Embuti uma página dentro de outra</td><td><code>&lt;iframe src="https://exemplo.com"&gt;&lt;/iframe&gt;</code></td></tr>
+                                                <tr><td><code>&lt;map&gt; / &lt;area&gt;</code></td><td>Regiões clicáveis em uma imagem</td><td><code>&lt;map name="m"&gt;&lt;area shape="rect" ...&gt;&lt;/map&gt;</code></td></tr>
+                                                <tr><td><code>&lt;canvas&gt;</code></td><td>Desenho vetorial via JavaScript</td><td><code>&lt;canvas id="tela" width="100"&gt;&lt;/canvas&gt;</code></td></tr>
+                                                <tr><td><code>&lt;svg&gt;</code></td><td>Gráficos vetoriais escaláveis</td><td><code>&lt;svg&gt;&lt;circle r="10"&gt;&lt;/svg&gt;</code></td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mídia incorporada&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: sans-serif; padding: 1rem; }
+    figcaption { color: #6c757d; font-size: .9rem; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h3&gt;Imagem&lt;/h3&gt;
+  &lt;img src="https://picsum.photos/200/120" alt="Imagem aleatória"&gt;
+  &lt;h3&gt;Áudio&lt;/h3&gt;
+  &lt;audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"&gt;&lt;/audio&gt;
+  &lt;h3&gt;Vetor SVG&lt;/h3&gt;
+  &lt;svg width="120" height="40"&gt;
+    &lt;rect width="120" height="40" rx="8" fill="#00a7db" /&gt;
+    &lt;text x="12" y="26" fill="#fff" font-family="sans-serif"&gt;SVG&lt;/text&gt;
+  &lt;/svg&gt;
+  &lt;figure&gt;
+    &lt;figcaption&gt;Legenda da imagem acima.&lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Categoria: Tabelas -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="catTabelas">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#catTabelasBody" aria-expanded="false" aria-controls="catTabelasBody">
+                                    <i class="fa-solid fa-table me-2"></i> Tabelas
+                                </button>
+                            </h2>
+                            <div id="catTabelasBody" class="accordion-collapse collapse" aria-labelledby="catTabelas" data-bs-parent="#tagsAccordion">
+                                <div class="accordion-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped align-middle">
+                                            <thead><tr><th>Tag</th><th>O que faz</th><th>Exemplo</th></tr></thead>
+                                            <tbody>
+                                                <tr><td><code>&lt;table&gt;</code></td><td>Cria a tabela</td><td><code>&lt;table&gt;...&lt;/table&gt;</code></td></tr>
+                                                <tr><td><code>&lt;caption&gt;</code></td><td>Título/legenda da tabela</td><td><code>&lt;caption&gt;Vendas&lt;/caption&gt;</code></td></tr>
+                                                <tr><td><code>&lt;thead&gt;</code></td><td>Linha de cabeçalho da tabela</td><td><code>&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Nome&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</code></td></tr>
+                                                <tr><td><code>&lt;tbody&gt;</code></td><td>Corpo da tabela</td><td><code>&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;</code></td></tr>
+                                                <tr><td><code>&lt;tfoot&gt;</code></td><td>Rodapé da tabela (totais)</td><td><code>&lt;tfoot&gt;&lt;tr&gt;&lt;td&gt;Total&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;</code></td></tr>
+                                                <tr><td><code>&lt;tr&gt;</code></td><td>Linha da tabela</td><td><code>&lt;tr&gt;&lt;td&gt;célula&lt;/td&gt;&lt;/tr&gt;</code></td></tr>
+                                                <tr><td><code>&lt;th&gt;</code></td><td>Célula de cabeçalho</td><td><code>&lt;th scope="col"&gt;Nome&lt;/th&gt;</code></td></tr>
+                                                <tr><td><code>&lt;td&gt;</code></td><td>Célula de dados</td><td><code>&lt;td colspan="2"&gt;mesclado&lt;/td&gt;</code></td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Tabelas&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: sans-serif; padding: 1rem; }
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: .5rem 1rem; }
+    th { background: #1c314c; color: #fff; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;table&gt;
+    &lt;caption&gt;Notas dos alunos&lt;/caption&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;&lt;th&gt;Aluno&lt;/th&gt;&lt;th&gt;Nota&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;&lt;td&gt;Ana&lt;/td&gt;&lt;td&gt;9.5&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Bruno&lt;/td&gt;&lt;td&gt;8.0&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+      &lt;tr&gt;&lt;td&gt;Média&lt;/td&gt;&lt;td&gt;8.75&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tfoot&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Categoria: Formulários -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="catForms">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#catFormsBody" aria-expanded="false" aria-controls="catFormsBody">
+                                    <i class="fa-solid fa-square-check me-2"></i> Formulários
+                                </button>
+                            </h2>
+                            <div id="catFormsBody" class="accordion-collapse collapse" aria-labelledby="catForms" data-bs-parent="#tagsAccordion">
+                                <div class="accordion-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped align-middle">
+                                            <thead><tr><th>Tag</th><th>O que faz</th><th>Exemplo</th></tr></thead>
+                                            <tbody>
+                                                <tr><td><code>&lt;form&gt;</code></td><td>Agrupa campos para envio</td><td><code>&lt;form action="/salvar" method="post"&gt;&lt;/form&gt;</code></td></tr>
+                                                <tr><td><code>&lt;label&gt;</code></td><td>Rótulo de um campo</td><td><code>&lt;label for="nome"&gt;Nome&lt;/label&gt;</code></td></tr>
+                                                <tr><td><code>&lt;input&gt;</code></td><td>Campo de entrada (texto, senha, email...)</td><td><code>&lt;input type="text" name="nome"&gt;</code></td></tr>
+                                                <tr><td><code>&lt;button&gt;</code></td><td>Botão clicável</td><td><code>&lt;button type="submit"&gt;Enviar&lt;/button&gt;</code></td></tr>
+                                                <tr><td><code>&lt;select&gt; / &lt;option&gt;</code></td><td>Lista suspensa de opções</td><td><code>&lt;select&gt;&lt;option&gt;SP&lt;/option&gt;&lt;/select&gt;</code></td></tr>
+                                                <tr><td><code>&lt;optgroup&gt;</code></td><td>Agrupa opções dentro do select</td><td><code>&lt;optgroup label="Região"&gt;...&lt;/optgroup&gt;</code></td></tr>
+                                                <tr><td><code>&lt;datalist&gt;</code></td><td>Sugestões para o input</td><td><code>&lt;input list="ufs"&gt;&lt;datalist id="ufs"&gt;...&lt;/datalist&gt;</code></td></tr>
+                                                <tr><td><code>&lt;textarea&gt;</code></td><td>Campo de texto multilinha</td><td><code>&lt;textarea rows="4" cols="30"&gt;...&lt;/textarea&gt;</code></td></tr>
+                                                <tr><td><code>&lt;fieldset&gt; / &lt;legend&gt;</code></td><td>Agrupa campos com legenda</td><td><code>&lt;fieldset&gt;&lt;legend&gt;Dados pessoais&lt;/legend&gt;&lt;/fieldset&gt;</code></td></tr>
+                                                <tr><td><code>&lt;output&gt;</code></td><td>Resultado de um cálculo</td><td><code>&lt;output name="resultado"&gt;0&lt;/output&gt;</code></td></tr>
+                                                <tr><td><code>&lt;progress&gt; / &lt;meter&gt;</code></td><td>Barra de progresso / medição</td><td><code>&lt;progress value="70" max="100"&gt;&lt;/progress&gt;</code></td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Formulários&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: sans-serif; padding: 1rem; }
+    label { display: inline-block; margin-top: .6rem; }
+    input, select { padding: .3rem; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;form action="#" method="post"&gt;
+    &lt;fieldset&gt;
+      &lt;legend&gt;Cadastro&lt;/legend&gt;
+      &lt;label for="nome"&gt;Nome: &lt;/label&gt;
+      &lt;input type="text" id="nome" name="nome" placeholder="Seu nome"&gt;
+      &lt;br&gt;
+      &lt;label for="email"&gt;E-mail: &lt;/label&gt;
+      &lt;input type="email" id="email" name="email" placeholder="voce@email.com"&gt;
+      &lt;br&gt;
+      &lt;label for="uf"&gt;UF: &lt;/label&gt;
+      &lt;select id="uf" name="uf"&gt;
+        &lt;optgroup label="Sudeste"&gt;
+          &lt;option value="sp"&gt;São Paulo&lt;/option&gt;
+          &lt;option value="rj"&gt;Rio de Janeiro&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label="Sul"&gt;
+          &lt;option value="pr"&gt;Paraná&lt;/option&gt;
+        &lt;/optgroup&gt;
+      &lt;/select&gt;
+      &lt;br&gt;
+      &lt;label&gt;Nível de satisfação: &lt;input type="range" min="1" max="5" value="3"&gt;&lt;/label&gt;
+      &lt;br&gt;
+      &lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;
+      &lt;br&gt;
+      &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+    &lt;/fieldset&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Categoria: Interativos e scripts -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="catInterative">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#catInterativeBody" aria-expanded="false" aria-controls="catInterativeBody">
+                                    <i class="fa-solid fa-toggle-on me-2"></i> Interativos e scripts
+                                </button>
+                            </h2>
+                            <div id="catInterativeBody" class="accordion-collapse collapse" aria-labelledby="catInterative" data-bs-parent="#tagsAccordion">
+                                <div class="accordion-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped align-middle">
+                                            <thead><tr><th>Tag</th><th>O que faz</th><th>Exemplo</th></tr></thead>
+                                            <tbody>
+                                                <tr><td><code>&lt;details&gt; / &lt;summary&gt;</code></td><td>Bloco expansível (acordeão nativo)</td><td><code>&lt;details&gt;&lt;summary&gt;Ver mais&lt;/summary&gt;...&lt;/details&gt;</code></td></tr>
+                                                <tr><td><code>&lt;dialog&gt;</code></td><td>Janela de diálogo</td><td><code>&lt;dialog open&gt;&lt;p&gt;Aviso&lt;/p&gt;&lt;/dialog&gt;</code></td></tr>
+                                                <tr><td><code>&lt;script&gt;</code></td><td>Inclui/executa JavaScript</td><td><code>&lt;script&gt;console.log(&quot;olá&quot;);&lt;/script&gt;</code></td></tr>
+                                                <tr><td><code>&lt;noscript&gt;</code></td><td>Conteúdo quando JS está desativado</td><td><code>&lt;noscript&gt;Ative o JS.&lt;/noscript&gt;</code></td></tr>
+                                                <tr><td><code>&lt;template&gt;</code></td><td>Modelo de conteúdo clonável</td><td><code>&lt;template id="t"&gt;&lt;li&gt;item&lt;/li&gt;&lt;/template&gt;</code></td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Interativos e scripts&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: sans-serif; padding: 1rem; }
+    dialog { border: 2px solid #00a7db; border-radius: 8px; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;details&gt;
+    &lt;summary&gt;Ver mais informações&lt;/summary&gt;
+    &lt;p&gt;Conteúdo revelado ao clicar no resumo acima.&lt;/p&gt;
+  &lt;/details&gt;
+  &lt;dialog open&gt;
+    &lt;p&gt;Diálogo aberto por padrão.&lt;/p&gt;
+  &lt;/dialog&gt;
+  &lt;noscript&gt;Seu navegador está com JavaScript desativado.&lt;/noscript&gt;
+  &lt;script&gt;
+    console.log("Este site usa JavaScript!");
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hello World em HTML -->
+                    <h4 class="fw-bold mt-5 mb-2" style="color: var(--color-medium-blue);"><i class="fa-solid fa-rocket me-2"></i>Hello World em HTML</h4>
+                    <p>Praticar desde o primeiro segundo é o que transforma teoria em habilidade. O exemplo abaixo é o clássico <strong>Hello World</strong> — o ponto de partida de quem está aprendendo HTML.</p>
+                    <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Hello World&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello World!&lt;/h1&gt;
+  &lt;p&gt;Essa é a minha primeira página em HTML.&lt;/p&gt;
+  &lt;p&gt;Posso editar este código e testar agora mesmo.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <div class="alert alert-success mt-4 mb-0">
+                        <i class="fa-solid fa-circle-check me-2"></i>
+                        <strong>Você concluiu o HTML!</strong> Aprendeu o que é, como o navegador interpreta as tags e criou seu primeiro Hello World. O próximo passo é deixar tudo bonito com CSS.
+                    </div>
+                </article>
+
+                <!-- ========== CSS ========== -->
+                <article id="css" class="cap-section p-4 border rounded bg-white shadow-sm mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fa-brands fa-css3-alt display-4 me-3" style="color: var(--color-medium-blue);"></i>
+                        <h2 class="fw-bold mb-0" style="color: var(--color-dark-blue);">3. CSS — O Estilo e o Layout</h2>
+                    </div>
+
+                    <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que é CSS?</h4>
+                    <p><strong>CSS (Cascading Style Sheets)</strong> é a linguagem de estilo da web. Enquanto o HTML cuida da <em>estrutura</em>, o CSS cuida da <em>aparência</em>: cores, fontes, espaçamentos, tamanhos, posicionamento e responsividade. Ele separou o <strong>conteúdo</strong> da <strong>apresentação</strong>, tornando as páginas flexíveis e fáceis de manter.</p>
+
+                    <h4 class="fw-bold mt-4 mb-2" style="color: var(--color-medium-blue);">Como funciona</h4>
+                    <p>O CSS é formado por <strong>regras</strong>, compostas por um <strong>seletor</strong> (quem será estilizado) e um bloco de <strong>declarações</strong> (propriedade: valor). O termo <em>em cascata</em> significa que, havendo conflitos, a regra mais específica ou a última declarada ganha.</p>
+                    <pre class="bg-light p-3 rounded"><code>seletor {
+  propriedade: valor;
+  propriedade2: valor2;
+}</code></pre>
+                    <p>Exemplo real: estilizar todos os parágrafos com cor azul.</p>
+                    <pre class="bg-light p-3 rounded"><code>p {
+  color: #2837a0;
+  font-size: 18px;
+}</code></pre>
+
+                    <h4 class="fw-bold mt-4 mb-3" style="color: var(--color-medium-blue);">Principais conceitos</h4>
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 bg-light p-3">
+                                <h6 class="fw-bold" style="color: var(--color-dark-blue);"><i class="fa-solid fa-border-all me-1"></i> Box Model</h6>
+                                <p class="small text-muted mb-0">Todo elemento é uma caixa com conteúdo, <em>padding</em> (espaço interno), <em>border</em> (borda) e <em>margin</em> (espaço externo).</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 bg-light p-3">
+                                <h6 class="fw-bold" style="color: var(--color-dark-blue);"><i class="fa-solid fa-sitemap me-1"></i> Display</h6>
+                                <p class="small text-muted mb-0">Controla como o elemento se comporta: <code>block</code>, <code>inline</code>, <code>flex</code>, <code>grid</code>, etc.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 bg-light p-3">
+                                <h6 class="fw-bold" style="color: var(--color-dark-blue);"><i class="fa-solid fa-brush me-1"></i> Cores e fontes</h6>
+                                <p class="small text-muted mb-0"><code>color</code>, <code>background</code>, <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 bg-light p-3">
+                                <h6 class="fw-bold" style="color: var(--color-dark-blue);"><i class="fa-solid fa-mobile-screen me-1"></i> Responsividade</h6>
+                                <p class="small text-muted mb-0">Com <code>@media</code> e unidades relativas (<code>rem</code>, <code>%</code>, <code>vw</code>) o layout se adapta a qualquer tela.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="fw-bold mt-4 mb-2" style="color: var(--color-medium-blue);"><i class="fa-solid fa-seedling me-2"></i>Exemplo prático e editável</h4>
+                    <p>O exemplo mostra cores, fontes, centralização e o efeito <code>hover</code> no botão aplicados com CSS.</p>
+                    <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Exemplo de CSS&lt;/title&gt;
+  &lt;style&gt;
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: #1c314c;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      margin: 0;
+    }
+    .cartao {
+      background: #2837a0;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    .cartao h1 { color: #00a7db; margin: 0 0 0.5rem; }
+    .botao {
+      background: #00a7db;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .botao:hover { transform: scale(1.08); background: #c85ff0; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="cartao"&gt;
+    &lt;h1&gt;Estilizado com CSS&lt;/h1&gt;
+    &lt;p&gt;Passe o mouse sobre o botão.&lt;/p&gt;
+    &lt;button class="botao"&gt;Eu sou um botão!&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </article>
+
+                <!-- ========== JAVASCRIPT ========== -->
+                <article id="js" class="cap-section p-4 border rounded bg-white shadow-sm mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fa-brands fa-js display-4 me-3" style="color: var(--color-purple);"></i>
+                        <h2 class="fw-bold mb-0" style="color: var(--color-dark-blue);">4. JavaScript — O primeiro toque de programação</h2>
+                    </div>
+
+                    <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que é JavaScript?</h4>
+                    <p><strong>JavaScript (JS)</strong> é uma linguagem de programação interpretada pelo navegador. Diferente do HTML e do CSS — que apenas <em>marcam</em> e <em>estilizam</em> — o JavaScript <strong>executa lógica</strong>: reage a cliques, valida formulários, busca dados, anima elementos e constrói aplicações inteiras. É a camada de <strong>comportamento</strong> da página.</p>
+
+                    <h4 class="fw-bold mt-4 mb-2" style="color: var(--color-medium-blue);">Como funciona</h4>
+                    <ul class="mb-0">
+                        <li>É escrito dentro de <code>&lt;script&gt;...&lt;/script&gt;</code> ou em arquivos <code>.js</code> separados.</li>
+                        <li>Interage com a página através do objeto <code>document</code> (o DOM).</li>
+                        <li>Executa de forma <strong>assíncrona</strong> e orientada a <strong>eventos</strong> (clicou, mudou, carregou...).</li>
+                        <li>Usa variáveis (<code>let</code>, <code>const</code>), funções, estruturas de decisão e repetição como qualquer linguagem de programação.</li>
+                    </ul>
+
+                    <h4 class="fw-bold mt-4 mb-2" style="color: var(--color-medium-blue);">Primeiros comandos</h4>
+                    <pre class="bg-light p-3 rounded"><code>// Declarando variáveis
+let nome = "Ana";
+const ano = 2026;
+
+// Função que combina valores
+function cumprimentar(nome) {
+  return "Olá, " + nome + "!";
+}
+
+// Exibe uma mensagem na página
+alert(cumprimentar(nome));</code></pre>
+
+                    <h4 class="fw-bold mt-4 mb-2" style="color: var(--color-medium-blue);"><i class="fa-solid fa-bolt me-2"></i>Exemplo interativo e editável</h4>
+                    <p>Este contador é movido a JavaScript: o <em>script</em> "ouve" o clique no botão, incrementa uma variável e atualiza o texto da página.</p>
+                    <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;JavaScript na prática&lt;/title&gt;
+  &lt;style&gt;
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      text-align: center;
+    }
+    button { padding: 12px 24px; font-size: 18px; font-weight: 700; border: none; border-radius: 8px;
+             background: #9628a5; color: #fff; cursor: pointer; }
+    #saida { font-size: 20px; margin-top: 1rem; color: #1c314c; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Contador em JavaScript&lt;/h1&gt;
+  &lt;button id="botao"&gt;Clique em mim&lt;/button&gt;
+  &lt;p id="saida"&gt;Você clicou 0 vezes.&lt;/p&gt;
+
+  &lt;script&gt;
+    let contador = 0;
+    const botao = document.getElementById("botao");
+    const saida = document.getElementById("saida");
+
+    botao.addEventListener("click", () =&gt; {
+      contador = contador + 1;
+      saida.textContent = "Você clicou " + contador + " vezes.";
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <p class="mt-3 mb-0">Este é o fim da capacitação introdutória. Você já sabe a <strong>história</strong>, a <strong>estrutura</strong> (HTML), o <strong>estilo</strong> (CSS) e o <strong>comportamento</strong> (JS). Continue na linha do tempo da trilha com as próximas capacitações!</p>
+                </article>
+
+                <!-- Navegação anterior/próximo -->
+                <div class="d-flex justify-content-between">
+                    <span class="text-muted small align-self-center"><i class="fa-solid fa-hourglass-half me-1"></i>Capacitações futuras em desenvolvimento</span>
+                    <a href="../index.html" class="btn btn-primary" style="background-color: var(--color-light-blue); border-color: var(--color-light-blue);"><i class="fa-solid fa-arrow-left me-1"></i>Voltar para a Trilha</a>
                 </div>
+
+                <!-- Extras: navegação rápida, recursos e dica -->
+                <div class="row g-4 mt-4 justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="card border-0 shadow-sm p-3 h-100 bg-light">
+                            <h5 class="fw-bold mb-3" style="color: var(--color-dark-blue);"><i class="fa-solid fa-list-ul me-2"></i>Neste conteúdo</h5>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2"><a href="#historia" class="text-decoration-none" style="color: var(--color-dark-blue);"><i class="fa-solid fa-1 me-1" style="color: var(--color-light-blue);"></i>História da Web</a></li>
+                                <li class="mb-2"><a href="#html" class="text-decoration-none" style="color: var(--color-dark-blue);"><i class="fa-solid fa-2 me-1" style="color: var(--color-light-blue);"></i>HTML</a></li>
+                                <li class="mb-2"><a href="#css" class="text-decoration-none" style="color: var(--color-dark-blue);"><i class="fa-solid fa-3 me-1" style="color: var(--color-light-blue);"></i>CSS</a></li>
+                                <li><a href="#js" class="text-decoration-none" style="color: var(--color-dark-blue);"><i class="fa-solid fa-4 me-1" style="color: var(--color-light-blue);"></i>JavaScript</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="card border-0 shadow-sm p-3 h-100 bg-light">
+                            <h5 class="fw-bold mb-3" style="color: var(--color-dark-blue);"><i class="fa-solid fa-bookmark me-2"></i>Recursos e Links</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" class="fw-bold text-decoration-none" style="color: var(--color-medium-blue);">
+                                        <i class="fa-solid fa-link me-1"></i>MDN Web Docs - HTML
+                                    </a>
+                                    <p class="text-muted small mb-0">Referência e documentação oficial e detalhada sobre tags HTML.</p>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank" class="fw-bold text-decoration-none" style="color: var(--color-medium-blue);">
+                                        <i class="fa-solid fa-link me-1"></i>MDN Web Docs - CSS
+                                    </a>
+                                    <p class="text-muted small mb-0">Referência completa sobre propriedades e layout em CSS.</p>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank" class="fw-bold text-decoration-none" style="color: var(--color-medium-blue);">
+                                        <i class="fa-solid fa-link me-1"></i>MDN Web Docs - JavaScript
+                                    </a>
+                                    <p class="text-muted small mb-0">Guia e referência da linguagem JavaScript no navegador.</p>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dkZ9-8Mc9UsI5m6_SqyeCAt" target="_blank" class="fw-bold text-decoration-none" style="color: var(--color-medium-blue);">
+                                        <i class="fa-brands fa-youtube me-1 text-danger"></i>Curso em Vídeo: HTML5 & CSS3
+                                    </a>
+                                    <p class="text-muted small mb-0">Excelente curso gratuito em vídeo do mestre Gustavo Guanabara.</p>
+                                </li>
+                                <li class="mb-0">
+                                    <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element" target="_blank" class="fw-bold text-decoration-none" style="color: var(--color-medium-blue);">
+                                        <i class="fa-solid fa-link me-1"></i>Lista completa de elementos HTML
+                                    </a>
+                                    <p class="text-muted small mb-0">Todos os elementos da linguagem na documentação da MDN.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card border-0 shadow-sm p-3 text-white" style="background: linear-gradient(135deg, var(--color-light-blue), var(--color-medium-blue));">
+                            <h5 class="fw-bold mb-1"><i class="fa-solid fa-lightbulb me-2"></i>Dica da CompActJr</h5>
+                            <p class="small mb-0">Não memorize todas as tags. Aprenda a <strong>pesquisar</strong> na documentação e a <strong>praticar</strong> com exemplos pequenos. Cada página desta capacitação foi feita com apenas HTML, CSS e pouco JavaScript!</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </main>
+        </main>
 
     <!-- Footer -->
     <footer class="text-center mt-auto">
         <div class="container">
             <p class="mb-2">&copy; 2026 CompActJr. Todos os direitos reservados.</p>
             <div class="social-links">
-                <a href="https://github.com/compactjr" target="_blank" aria-label="Github"><i class="bi bi-github"></i></a>
-                <a href="https://linkedin.com/company/compactjr" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/compactjr" target="_blank" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/company/compactjr" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
 
     <!-- Bootstrap Bundle JS (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Draggable Timeline -->
+    <script src="../../../assets/js/timeline-drag.js"></script>
+    <!-- Timeline Tabs -->
+    <script src="../../../assets/js/capacitacao-tabs.js"></script>
     <!-- Custom Search Script (Stubbed) -->
-    <script src="./assets/js/search-stub.js"></script>
+    <script src="../../../assets/js/search-stub.js"></script>
+    <!-- Central Resources Data (JSON com os links) -->
+    <script src="../../../assets/data/resources.js"></script>
+    <!-- YouTube Player Component -->
+    <script src="../../../assets/js/player-modal.js"></script>
 </body>
 </html>

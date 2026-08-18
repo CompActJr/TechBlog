@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilha: Fundamentos da Web | CompActJr</title>
+    <!-- Reset and Custom CSS -->
+    <link rel="stylesheet" href="../../../assets/css/reset.css">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Custom Main CSS -->
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <!-- Components CSS -->
+    <link rel="stylesheet" href="../../../assets/css/components.css">
+    <!-- Trilha CSS -->
+    <link rel="stylesheet" href="../../../assets/css/trilha.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="../../../index.html">
+                    <img src="../../../public/logo.png" alt="Logo" width="40" height="40">
+                    CompActJr TechBlog
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categorias
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item active" href="../../../trilhas/programacao-web/index.html">Programação Web</a></li>
+                                <li><a class="dropdown-item" href="../../../trilhas/devops-infra/index.html">Infraestrutura e DevOps</a></li>
+                                <li><a class="dropdown-item" href="../../../trilhas/desenvolvimento-backend/index.html">Desenvolvimento Backend</a></li>
+                                <li><a class="dropdown-item" href="../../../trilhas/ia-analise/index.html">IA e Análise de Dados</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../agradecimentos.html">Agradecimentos</a>
+                        </li>
+                    </ul>
+                    <!-- Search Box (Stubbed / Prepared) -->
+                    <form class="d-flex ms-auto search-container" role="search" onsubmit="event.preventDefault();">
+                        <input class="form-control search-input" type="search" placeholder="Pesquisar posts..." aria-label="Search" id="searchInput">
+                        <button class="search-btn" type="button" id="searchBtn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <!-- Suggestions dropdown -->
+                        <ul class="dropdown-menu position-absolute w-100 mt-2" id="searchSuggestions" style="display: none; top: 100%;">
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container my-5">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../../../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="../index.html">Programação Web</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Fundamentos da Web</li>
+            </ol>
+        </nav>
+
+        <!-- ===================== HERO ===================== -->
+        <section class="trilha-hero">
+            <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="tr-hero-badge"><i class="fa-solid fa-route"></i>Trilha introdutória</span>
+                <span class="tr-hero-badge"><i class="fa-solid fa-stairs"></i>11 etapas</span>
+                <span class="tr-hero-badge"><i class="fa-solid fa-signal"></i>Nível: Iniciante</span>
+            </div>
+            <h1>Fundamentos da Web</h1>
+            <p class="lead">Antes de escrever código, entenda o mapa do desenvolvimento web. Esta trilha percorre, em 11 etapas, como a web funciona, o que são HTML, CSS e JavaScript, como eles trabalham juntos e quais caminhos você pode seguir depois.</p>
+            <div class="d-flex flex-wrap align-items-center gap-3 mt-4">
+                <button type="button" class="btn btn-light btn-lg fw-bold" id="trStart">
+                    <i class="fa-solid fa-play me-2"></i>Começar trilha
+                </button>
+                <button type="button" class="btn btn-outline-light" id="trReset">
+                    <i class="fa-solid fa-rotate-left me-1"></i>Reiniciar progresso
+                </button>
+            </div>
+            <div class="tr-progress"><div class="tr-progress-bar" id="trProgressBar"></div></div>
+            <p class="tr-progress-text" id="trProgressText">0 de 11 etapas concluídas (0%)</p>
+        </section>
+
+        <!-- ===================== TIMELINE ===================== -->
+        <section class="p-4 border rounded bg-white shadow-sm mb-4">
+            <div class="d-flex align-items-center mb-1">
+                <i class="fa-solid fa-map me-2 display-6" style="color: var(--color-light-blue);"></i>
+                <h3 class="fw-bold mb-0" style="color: var(--color-dark-blue);">Linha do Tempo da Trilha</h3>
+            </div>
+            <p class="text-muted mb-2">Siga na ordem indicada e marque cada etapa como concluída. Clique em um passo para carregar o conteúdo; arraste ou use as setas para navegar.</p>
+
+            <div class="timeline-wrapper mb-3">
+                <button type="button" class="timeline-nav timeline-prev" data-timeline-control="trilhaTimeline" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+
+                <div class="timeline-scroll" id="trilhaTimeline" data-timeline>
+                    <div class="timeline-item" data-section="etapa-01" role="button" tabindex="0" aria-label="Como a Web funciona">
+                        <div class="tl-node">1</div>
+                        <div class="tl-card">
+                            <span class="badge tl-badge mb-2" style="background-color: var(--color-light-blue);">Etapa 01</span>
+                            <h5>Como a Web funciona</h5>
+                            <p>Cliente e servidor: o que acontece quando você acessa um site.</p>
+                            <span class="tl-status is-next">&#9675; Próximo</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-section="etapa-02" role="button" tabindex="0" aria-label="URL, DNS, HTTP e HTTPS">
+                        <div class="tl-node">2</div>
+                        <div class="tl-card">
+                            <span class="badge tl-badge mb-2" style="background-color: var(--color-medium-blue);">Etapa 02</span>
+                            <h5>URL, DNS, HTTP e HTTPS</h5>
+                            <p>Endereços, o "agenda telefônica" da internet e os códigos de status.</p>
+                            <span class="tl-status is-next">&#9675; Próximo</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-section="etapa-03" role="button" tabindex="0" aria-label="HTML">
+                        <div class="tl-node">3</div>
+                        <div class="tl-card">
+                            <span class="badge tl-badge mb-2" style="background-color: var(--color-light-blue);">Etapa 03</span>
+                            <h5>HTML — a estrutura</h5>
+                            <p>Tags, atributos e semântica para organizar o conteúdo.</p>
+                            <span class="tl-status is-next">&#9675; Próximo</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-section="etapa-04" role="button" tabindex="0" aria-label="CSS">
+                        <div class="tl-node">4</div>
+                        <div class="tl-card">
+                            <span class="badge tl-badge mb-2" style="background-color: var(--color-medium-blue);">Etapa 04</span>
+                            <h5>CSS — o estilo</h5>
+                            <p>Seletores, box model e como dar aparência à página.</p>
+                            <span class="tl-status is-next">&#9675; Próximo</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-section="etapa-05" role="button" tabindex="0" aria-label="JavaScript">
+                        <div class="tl-node">5</div>
+                        <div class="tl-card">
+                            <span class="badge tl-badge mb-2" style="background-color: var(--color-purple);">Etapa 05</span>
+                            <h5>JavaScript — a interatividade</h5>
+                            <p>Variáveis, funções e eventos para dar vida às páginas.</p>
+                            <span class="tl-status is-next">&#9675; Próximo</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-section="etapa-06" role="button" tabindex="0" aria-label="HTML, CSS e JS juntos">
+                        <div class="tl-node">6</div>
+                        <div class="tl-card">
+                            <span class="badge tl-badge mb-2" style="background-color: var(--color-purple);">Etapa 06</span>
+                            <h5>HTML + CSS + JS juntos</h5>
+                            <p>Os três pilares trabalhando em uma aplicação simples.</p>
+                            <span class="tl-status is-next">&#9675; Próximo</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-section="etapa-07" role="button" tabindex="0" aria-label="Responsividade">
+                        <div class="tl-node">7</div>
+                        <div class="tl-card">
+                            <span class="badge tl-badge mb-2" style="background-color: var(--color-light-blue);">Etapa 07</span>
+                            <h5>Responsividade</h5>
+                            <p>Media queries, flexbox e grid para qualquer tela.</p>
+                            <span class="tl-status is-next">&#9675; Próximo</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-section="etapa-08" role="button" tabindex="0" aria-label="O que é Front-end">
+                        <div class="tl-node">8</div>
+                        <div class="tl-card">
+                            <span class="badge tl-badge mb-2" style="background-color: var(--color-medium-blue);">Etapa 08</span>
+                            <h5>O que é Front-end</h5>
+                            <p>Front-end, back-end e por que existem frameworks.</p>
+                            <span class="tl-status is-next">&#9675; Próximo</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-section="etapa-09" role="button" tabindex="0" aria-label="APIs e comunicação">
+                        <div class="tl-node">9</div>
+                        <div class="tl-card">
+                            <span class="badge tl-badge mb-2" style="background-color: var(--color-purple);">Etapa 09</span>
+                            <h5>APIs e comunicação</h5>
+                            <p>Endpoints, métodos HTTP e o formato JSON.</p>
+                            <span class="tl-status is-next">&#9675; Próximo</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-section="etapa-10" role="button" tabindex="0" aria-label="Do código à aplicação">
+                        <div class="tl-node">10</div>
+                        <div class="tl-card">
+                            <span class="badge tl-badge mb-2" style="background-color: var(--color-medium-blue);">Etapa 10</span>
+                            <h5>Do código à aplicação</h5>
+                            <p>Hospedagem, domínio e publicar seu site na internet.</p>
+                            <span class="tl-status is-next">&#9675; Próximo</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-section="etapa-11" role="button" tabindex="0" aria-label="Mapa do desenvolvimento web">
+                        <div class="tl-node">11</div>
+                        <div class="tl-card">
+                            <span class="badge tl-badge mb-2" style="background-color: var(--color-light-violet);">Etapa 11</span>
+                            <h5>Mapa do desenvolvimento web</h5>
+                            <p>Quais caminhos seguir depois dos fundamentos.</p>
+                            <span class="tl-status is-next">&#9675; Próximo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="timeline-nav timeline-next" data-timeline-control="trilhaTimeline" aria-label="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- ===================== O QUE POSSO FAZER ===================== -->
+        <section id="oQuePossoFazer" class="mb-4">
+            <div class="d-flex align-items-center mb-3">
+                <i class="fa-solid fa-rocket me-2 display-6" style="color: var(--color-light-blue);"></i>
+                <h2 class="fw-bold mb-0" style="color: var(--color-dark-blue);">O que posso fazer depois da trilha?</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="can-do-card">
+                        <div class="can-do-icon"><i class="fa-solid fa-file-code"></i></div>
+                        <h5>Criar sua primeira página</h5>
+                        <p>Estruturar um documento HTML do zero, com conteúdo, imagem e links.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="can-do-card">
+                        <div class="can-do-icon"><i class="fa-solid fa-table-columns"></i></div>
+                        <h5>Usar HTML semântico</h5>
+                        <p>Organizar a página com seções, cabeçalhos, listas e artigos legíveis para navegadores e acessibilidade.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="can-do-card">
+                        <div class="can-do-icon"><i class="fa-solid fa-palette"></i></div>
+                        <h5>Estilizar com CSS</h5>
+                        <p>Aplicar cores, fontes, espaçamentos e layouts com folhas de estilo.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="can-do-card">
+                        <div class="can-do-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h5>Adicionar interatividade</h5>
+                        <p>Responder a cliques e alterar a página em tempo real com JavaScript.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="can-do-card">
+                        <div class="can-do-icon"><i class="fa-solid fa-server"></i></div>
+                        <h5>Entender a Web por baixo</h5>
+                        <p>Saber como URLs, DNS, HTTP e servidores entregam as páginas até você.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="can-do-card">
+                        <div class="can-do-icon"><i class="fa-solid fa-map"></i></div>
+                        <h5>Escolher o próximo passo</h5>
+                        <p>Entender os caminhos disponíveis — CSS avançado, JS, frameworks, backend — e decidir com segurança.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== ETAPAS ===================== -->
+
+        <!-- ========== ETAPA 1 ========== -->
+        <article id="etapa-01" class="cap-section active p-4 border rounded bg-white shadow-sm mb-4">
+            <div class="tr-step-head">
+                <div class="tr-step-icon"><i class="fa-solid fa-globe"></i></div>
+                <div>
+                    <span class="tr-step-tag">Etapa 01 de 11</span>
+                    <h2>Como a Web funciona</h2>
+                </div>
+            </div>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que é?</h4>
+            <p>A <strong>web (World Wide Web)</strong> é um sistema de documentos interligados por <em>links</em> que roda sobre a <strong>internet</strong> — a rede física que conecta computadores no mundo todo. A comunicação acontece no modelo <strong>cliente-servidor</strong>: o <strong>navegador</strong> (cliente) pede informações e o <strong>servidor</strong> (um computador que guarda e entrega sites) responde.</p>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que você precisa entender</h4>
+            <ul>
+                <li><strong>Internet ≠ Web:</strong> a internet é a rede; a web é uma das aplicações que usam essa rede (assim como e-mail e mensagens).</li>
+                <li><strong>Cliente e servidor:</strong> o navegador solicita, o servidor entrega.</li>
+                <li><strong>Recursos:</strong> páginas, imagens, vídeos e APIs são recursos identificados por um endereço (URL).</li>
+            </ul>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Como funciona?</h4>
+            <div class="diagram-box">
+                <ol>
+                    <li>Você digita um endereço (URL) no navegador.</li>
+                    <li>O navegador pergunta ao <strong>DNS</strong> qual é o número (IP) daquele nome.</li>
+                    <li>Ele envia uma <strong>requisição HTTP</strong> ao servidor.</li>
+                    <li>O servidor localiza o recurso e devolve a resposta (HTML, CSS, JS, imagens...).</li>
+                    <li>O navegador interpreta e <strong>renderiza</strong> a página para você.</li>
+                </ol>
+            </div>
+            <pre class="code-example"><code>Você digita uma URL no navegador
+        │
+        ▼
+[Navegador] ── "qual é o IP de site.com?" ──► [Servidor DNS]
+        │                                          │
+        │◄──── devolve o IP (192.168.0.1) ────────┘
+        ▼
+[Navegador] ── envia requisição HTTP ──► [Servidor Web]
+        │                                          │
+        │◄── devolve HTML + CSS + JS ─────────────┘
+        ▼
+[Navegador] interpreta e renderiza a página</code></pre>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Onde isso aparece?</h4>
+            <p>Em <strong>toda vez que você abre um site</strong>, envia um formulário ou assiste a um vídeo. Quando um site "não carrega", o motivo costuma estar em uma destas peças: DNS, rede, servidor ou navegador — agora você sabe onde procurar.</p>
+
+            <h4 class="fw-bold mt-4 mb-1" style="color: var(--color-dark-blue);"><i class="fa-solid fa-book me-1"></i>Continue estudando</h4>
+            <p class="text-muted small mb-1">Materiais selecionados para aprofundar esta etapa.</p>
+
+            <button type="button" class="yt-card mb-3" data-yt-comp data-key="etapa-01" data-title="Vídeo da Etapa 1 — Como a Web funciona">
+                <div class="yt-card-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div class="yt-card-body">
+                    <h5 class="yt-card-title">Vídeo da Etapa 1 — Como a Web funciona</h5>
+                    <p class="yt-card-text">Clique para ver e assistir o vídeo embutido aqui mesmo.</p>
+                </div>
+                <div class="yt-card-count"><span data-yt-count>0</span> materiais</div>
+            </button>
+
+            <div class="resource-grid">
+                <a class="resource-card" href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">MDN — Como a Web funciona</span>
+                    <p class="resource-desc">O que acontece, passo a passo, quando você acessa um site.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">MDN — Como a Internet funciona?</span>
+                    <p class="resource-desc">A rede física que conecta computadores ao redor do mundo.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <div class="etapa-nav">
+                <button type="button" class="btn btn-primary" data-complete-step="etapa-01" style="background-color: var(--color-light-blue); border-color: var(--color-light-blue);">
+                    <i class="fa-solid fa-circle-check me-1"></i>Concluir etapa
+                </button>
+                <a class="btn btn-outline-secondary" href="#etapa-02">Próxima etapa: URL, DNS, HTTP e HTTPS <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </article>
+
+        <!-- ========== ETAPA 2 ========== -->
+        <article id="etapa-02" class="cap-section p-4 border rounded bg-white shadow-sm mb-4">
+            <div class="tr-step-head">
+                <div class="tr-step-icon"><i class="fa-solid fa-link"></i></div>
+                <div>
+                    <span class="tr-step-tag">Etapa 02 de 11</span>
+                    <h2>URL, DNS, HTTP e HTTPS</h2>
+                </div>
+            </div>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que é?</h4>
+            <p>A <strong>URL</strong> é o endereço de um recurso na web. O <strong>DNS</strong> traduz nomes (como <code>site.com</code>) em endereços numéricos (IP) — a "agenda telefônica" da internet. O <strong>HTTP</strong> é o protocolo de comunicação entre cliente e servidor, e o <strong>HTTPS</strong> é a versão segura, com os dados <strong>cifrados</strong>.</p>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que você precisa entender</h4>
+            <ul>
+                <li>As <strong>partes de uma URL</strong>: protocolo, domínio, caminho, query string.</li>
+                <li>Os <strong>métodos HTTP</strong>: GET (buscar), POST (criar), PUT (atualizar), DELETE (remover).</li>
+                <li>Os <strong>códigos de status</strong>: 200 (ok), 301/302 (redirecionamento), 404 (não encontrado), 500 (erro do servidor).</li>
+                <li><strong>HTTPS</strong> = HTTP + cifragem (SSL/TLS): é por isso que existe o "cadeado" na barra de endereço.</li>
+            </ul>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Como funciona?</h4>
+            <div class="diagram-box">
+                <ol>
+                    <li>Você digita <code>https://www.site.com/blog/artigo</code>.</li>
+                    <li>O navegador consulta o <strong>DNS</strong> e descobre o IP do domínio.</li>
+                    <li>Ele envia uma requisição <code>GET /blog/artigo</code> ao servidor.</li>
+                    <li>O servidor responde com <code>200 OK</code> e o conteúdo — ou com um erro, como <code>404</code>.</li>
+                    <li>Como é <strong>HTTPS</strong>, tudo isso viaja cifrado.</li>
+                </ol>
+            </div>
+            <pre class="code-example"><code>https://www.site.com:443/blog/artigo?pagina=2#topo
+│      │            │   │             │        │
+│      │            │   │             │        └ ancoragem (#topo)
+│      │            │   │             └ query string (?pagina=2)
+│      │            │   └ caminho (/blog/artigo)
+│      │            └ porta (:443, padrão HTTPS)
+│      └ domínio (www.site.com)
+└ protocolo (https://)
+
+Códigos de status mais comuns:
+200 OK · 301 Movido · 404 Não encontrado · 500 Erro do servidor</code></pre>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Onde isso aparece?</h4>
+            <p>No <strong>cadeado de HTTPS</strong> ao lado do endereço, nos erros de página (<code>404</code>), nos links que você copia e compartilha e em tudo que um formulário envia para um servidor.</p>
+
+            <h4 class="fw-bold mt-4 mb-1" style="color: var(--color-dark-blue);"><i class="fa-solid fa-book me-1"></i>Continue estudando</h4>
+            <p class="text-muted small mb-1">Materiais selecionados para aprofundar esta etapa.</p>
+
+            <button type="button" class="yt-card mb-3" data-yt-comp data-key="etapa-02" data-title="Vídeo da Etapa 2 — URL, DNS, HTTP e HTTPS">
+                <div class="yt-card-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div class="yt-card-body">
+                    <h5 class="yt-card-title">Vídeo da Etapa 2 — URL, DNS, HTTP e HTTPS</h5>
+                    <p class="yt-card-text">Clique para ver e assistir o vídeo embutido aqui mesmo.</p>
+                </div>
+                <div class="yt-card-count"><span data-yt-count>0</span> materiais</div>
+            </button>
+
+            <div class="resource-grid">
+                <a class="resource-card" href="https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Reference/Status" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">MDN — Códigos de status HTTP</span>
+                    <p class="resource-desc">Referência de todos os códigos de resposta HTTP em português.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Reference/Methods" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">MDN — Métodos de requisição HTTP</span>
+                    <p class="resource-desc">GET, POST, PUT, DELETE e outros métodos do protocolo.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://www.wpbeginner.com/pt/glossary/dns" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">WPBeginner — O que é DNS?</span>
+                    <p class="resource-desc">Explicação simples do sistema de nomes de domínio em português.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <div class="etapa-nav">
+                <button type="button" class="btn btn-primary" data-complete-step="etapa-02" style="background-color: var(--color-light-blue); border-color: var(--color-light-blue);">
+                    <i class="fa-solid fa-circle-check me-1"></i>Concluir etapa
+                </button>
+                <a class="btn btn-outline-secondary" href="#etapa-03">Próxima etapa: HTML — a estrutura <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </article>
+
+        <!-- ========== ETAPA 3 ========== -->
+        <article id="etapa-03" class="cap-section p-4 border rounded bg-white shadow-sm mb-4">
+            <div class="tr-step-head">
+                <div class="tr-step-icon"><i class="fa-brands fa-html5"></i></div>
+                <div>
+                    <span class="tr-step-tag">Etapa 03 de 11</span>
+                    <h2>HTML — a estrutura</h2>
+                </div>
+            </div>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que é?</h4>
+            <p><strong>HTML (HyperText Markup Language)</strong> é a linguagem de marcação que <strong>estrutura o conteúdo</strong> da web. Não é uma linguagem de programação: ela apenas <em>descreve</em> o que cada parte representa — títulos, parágrafos, imagens, links, listas e formulários.</p>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que você precisa entender</h4>
+            <ul>
+                <li><strong>Tags e atributos:</strong> a maioria vem em par de abertura/fechamento: <code>&lt;tag atributo="valor"&gt;conteúdo&lt;/tag&gt;</code>.</li>
+                <li><strong>Aninhamento:</strong> elementos podem conter outros elementos (pai e filho).</li>
+                <li><strong>Semântica:</strong> tags como <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code> e <code>&lt;article&gt;</code> dão significado, não apenas forma.</li>
+                <li><strong>DOM:</strong> o navegador transforma o HTML em uma árvore de objetos chamada DOM.</li>
+            </ul>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Como funciona?</h4>
+            <div class="diagram-box">
+                <ol>
+                    <li>Você escreve o documento <code>.html</code> com tags.</li>
+                    <li>O navegador lê o arquivo de cima para baixo e monta o <strong>DOM</strong>.</li>
+                    <li>Ele aplica os estilos (CSS) e o comportamento (JS) sobre essa árvore.</li>
+                    <li>Você vê o resultado renderizado na tela.</li>
+                </ol>
+            </div>
+            <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Minha primeira página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+    &lt;p&gt;Este é o &lt;strong&gt;primeiro parágrafo&lt;/strong&gt;.&lt;/p&gt;
+    &lt;a href="https://developer.mozilla.org/pt-BR/"&gt;Estude no MDN&lt;/a&gt;
+    &lt;img src="https://picsum.photos/200/120" alt="Imagem aleatória"&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Onde isso aparece?</h4>
+            <p>Em <strong>todo site</strong>. Aperte <strong>F12</strong> em qualquer página e abra a aba "Elements"/"Elementos" para ver o HTML vivo que o navegador montou.</p>
+
+            <h4 class="fw-bold mt-4 mb-1" style="color: var(--color-dark-blue);"><i class="fa-solid fa-book me-1"></i>Continue estudando</h4>
+            <p class="text-muted small mb-1">Materiais selecionados para aprofundar esta etapa.</p>
+
+            <button type="button" class="yt-card mb-3" data-yt-comp data-key="etapa-03" data-title="Vídeos da Etapa 3 — HTML">
+                <div class="yt-card-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div class="yt-card-body">
+                    <h5 class="yt-card-title">Vídeos da Etapa 3 — HTML</h5>
+                    <p class="yt-card-text">Clique para ver e assistir os vídeos embutidos aqui mesmo.</p>
+                </div>
+                <div class="yt-card-count"><span data-yt-count>0</span> materiais</div>
+            </button>
+
+            <div class="resource-grid">
+                <a class="resource-card" href="https://www.cursoemvideo.com/curso/html5" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type course"><i class="fa-solid fa-graduation-cap"></i>Curso</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">Curso em Vídeo — HTML5 e CSS3</span>
+                    <p class="resource-desc">Curso gratuito do Guanabara, do zero até páginas completas.</p>
+                    <span class="resource-btn">Abrir curso <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">MDN — Referência de HTML</span>
+                    <p class="resource-desc">Todas as tags e atributos documentados em português.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <div class="etapa-nav">
+                <button type="button" class="btn btn-primary" data-complete-step="etapa-03" style="background-color: var(--color-light-blue); border-color: var(--color-light-blue);">
+                    <i class="fa-solid fa-circle-check me-1"></i>Concluir etapa
+                </button>
+                <a class="btn btn-outline-secondary" href="#etapa-04">Próxima etapa: CSS — o estilo <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </article>
+
+        <!-- ========== ETAPA 4 ========== -->
+        <article id="etapa-04" class="cap-section p-4 border rounded bg-white shadow-sm mb-4">
+            <div class="tr-step-head">
+                <div class="tr-step-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                <div>
+                    <span class="tr-step-tag">Etapa 04 de 11</span>
+                    <h2>CSS — o estilo</h2>
+                </div>
+            </div>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que é?</h4>
+            <p><strong>CSS (Cascading Style Sheets)</strong> é a linguagem de <strong>estilo</strong> da web. Ela controla cores, fontes, espaçamentos e posições, deixando o conteúdo do HTML com a aparência desejada.</p>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que você precisa entender</h4>
+            <ul>
+                <li><strong>Regras:</strong> <code>seletor { propriedade: valor; }</code> — ex.: <code>h1 { color: blue; }</code>.</li>
+                <li><strong>Seletores:</strong> por tag (<code>p</code>), classe (<code>.card</code>) ou id (<code>#menu</code>).</li>
+                <li><strong>Box model:</strong> todo elemento é uma caixa com conteúdo, padding, borda e margem.</li>
+                <li><strong>Cascata e especificidade:</strong> regras mais específicas "vencem" regras mais gerais.</li>
+            </ul>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Como funciona?</h4>
+            <div class="diagram-box">
+                <ol>
+                    <li>Você define regras em um arquivo <code>.css</code>.</li>
+                    <li>O navegador combina cada seletor com os elementos do DOM.</li>
+                    <li>Ele calcula o estilo final (aplicando cascata e especificidade).</li>
+                    <li>Renderiza cores, fontes e layout na tela.</li>
+                </ol>
+            </div>
+            <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Exemplo CSS&lt;/title&gt;
+    &lt;style&gt;
+      .card {
+        width: 240px;
+        padding: 1rem;
+        border: 2px solid #00a7db;
+        border-radius: 12px;
+        font-family: sans-serif;
+      }
+      .card h2 { color: #1c314c; }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="card"&gt;
+      &lt;h2&gt;Um cartão&lt;/h2&gt;
+      &lt;p&gt;Estilizado com CSS.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Onde isso aparece?</h4>
+            <p>Em <strong>tudo que é visual</strong> em um site: cores, fontes, botões, espaçamentos, alinhamento e animações.</p>
+
+            <h4 class="fw-bold mt-4 mb-1" style="color: var(--color-dark-blue);"><i class="fa-solid fa-book me-1"></i>Continue estudando</h4>
+            <p class="text-muted small mb-1">Materiais selecionados para aprofundar esta etapa.</p>
+
+            <div class="resource-grid">
+                <a class="resource-card" href="https://www.cursoemvideo.com/curso/html5" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type course"><i class="fa-solid fa-graduation-cap"></i>Curso</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">Curso em Vídeo — CSS3 (Módulo 1)</span>
+                    <p class="resource-desc">A metade de CSS do curso do Guanabara, com exemplos práticos.</p>
+                    <span class="resource-btn">Abrir curso <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">MDN — Referência de CSS</span>
+                    <p class="resource-desc">Propriedades, seletores e guias em português.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://flexboxfroggy.com/" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type practice"><i class="fa-solid fa-gamepad"></i>Prática</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇺🇸</span>
+                    </div>
+                    <span class="resource-title">Flexbox Froggy</span>
+                    <p class="resource-desc">Jogo interativo para aprender Flexbox arrastando elementos.</p>
+                    <span class="resource-btn">Jogar agora <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <div class="etapa-nav">
+                <button type="button" class="btn btn-primary" data-complete-step="etapa-04" style="background-color: var(--color-light-blue); border-color: var(--color-light-blue);">
+                    <i class="fa-solid fa-circle-check me-1"></i>Concluir etapa
+                </button>
+                <a class="btn btn-outline-secondary" href="#etapa-05">Próxima etapa: JavaScript — a interatividade <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </article>
+
+        <!-- ========== ETAPA 5 ========== -->
+        <article id="etapa-05" class="cap-section p-4 border rounded bg-white shadow-sm mb-4">
+            <div class="tr-step-head">
+                <div class="tr-step-icon purple"><i class="fa-brands fa-js"></i></div>
+                <div>
+                    <span class="tr-step-tag">Etapa 05 de 11</span>
+                    <h2>JavaScript — a interatividade</h2>
+                </div>
+            </div>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que é?</h4>
+            <p><strong>JavaScript</strong> é a linguagem de programação da web que roda dentro do navegador. Ela dá <strong>comportamento</strong> às páginas: reage a cliques, valida formulários, busca dados e altera o conteúdo sem recarregar a página.</p>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que você precisa entender</h4>
+            <ul>
+                <li><strong>Variáveis</strong> guardam valores; <strong>funções</strong> agrupam lógica reutilizável.</li>
+                <li><strong>Eventos</strong> (como <code>click</code>) disparam ações.</li>
+                <li><strong>DOM:</strong> com <code>document.querySelector</code> você localiza e altera elementos.</li>
+                <li>O <strong>console</strong> do navegador (<code>console.log</code>) ajuda a depurar.</li>
+            </ul>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Como funciona?</h4>
+            <div class="diagram-box">
+                <ol>
+                    <li>O navegador carrega o arquivo <code>.js</code> (ou o script embutido).</li>
+                    <li>O código registra <strong>listeners</strong> de eventos nos elementos do DOM.</li>
+                    <li>Quando o usuário interage (clica, digita), o evento dispara a função.</li>
+                    <li>A função altera o DOM e a tela é atualizada — sem recarregar a página.</li>
+                </ol>
+            </div>
+            <pre class="code-example"><code>let contador = 0;
+const botao = document.querySelector('#botao');
+const texto = document.querySelector('#texto');
+
+botao.addEventListener('click', () => {
+  contador += 1;
+  texto.textContent = 'Você clicou ' + contador + ' vez(es).';
+});</code></pre>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Onde isso aparece?</h4>
+            <p>Em <strong>menus, carrosséis, validações de formulário, contadores</strong> e praticamente toda interação que não recarrega a página.</p>
+
+            <h4 class="fw-bold mt-4 mb-1" style="color: var(--color-dark-blue);"><i class="fa-solid fa-book me-1"></i>Continue estudando</h4>
+            <p class="text-muted small mb-1">Materiais selecionados para aprofundar esta etapa.</p>
+
+            <button type="button" class="yt-card mb-3" data-yt-comp data-key="etapa-05" data-title="Vídeo da Etapa 5 — JavaScript">
+                <div class="yt-card-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div class="yt-card-body">
+                    <h5 class="yt-card-title">Vídeo da Etapa 5 — JavaScript</h5>
+                    <p class="yt-card-text">Clique para ver e assistir o vídeo embutido aqui mesmo.</p>
+                </div>
+                <div class="yt-card-count"><span data-yt-count>0</span> materiais</div>
+            </button>
+
+            <div class="resource-grid">
+                <a class="resource-card" href="https://www.cursoemvideo.com/curso/javascript" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type course"><i class="fa-solid fa-graduation-cap"></i>Curso</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">Curso em Vídeo — JavaScript</span>
+                    <p class="resource-desc">Curso gratuito do Guanabara para iniciantes em JavaScript.</p>
+                    <span class="resource-btn">Abrir curso <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">MDN — Referência de JavaScript</span>
+                    <p class="resource-desc">A referência definitiva da linguagem em português.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <div class="etapa-nav">
+                <button type="button" class="btn btn-primary" data-complete-step="etapa-05" style="background-color: var(--color-light-blue); border-color: var(--color-light-blue);">
+                    <i class="fa-solid fa-circle-check me-1"></i>Concluir etapa
+                </button>
+                <a class="btn btn-outline-secondary" href="#etapa-06">Próxima etapa: HTML + CSS + JS juntos <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </article>
+
+        <!-- ========== ETAPA 6 ========== -->
+        <article id="etapa-06" class="cap-section p-4 border rounded bg-white shadow-sm mb-4">
+            <div class="tr-step-head">
+                <div class="tr-step-icon violet"><i class="fa-solid fa-cubes"></i></div>
+                <div>
+                    <span class="tr-step-tag">Etapa 06 de 11</span>
+                    <h2>HTML + CSS + JS juntos</h2>
+                </div>
+            </div>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que é?</h4>
+            <p>Os <strong>três pilares</strong> trabalhando juntos: o <strong>HTML</strong> define a estrutura, o <strong>CSS</strong> a aparência e o <strong>JavaScript</strong> o comportamento. É assim que se constrói qualquer aplicação web real.</p>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que você precisa entender</h4>
+            <ul>
+                <li><strong>Separação de responsabilidades:</strong> cada linguagem cuida de uma parte do todo.</li>
+                <li><strong>O JS manipula o DOM:</strong> cria, altera e remove elementos do HTML.</li>
+                <li><strong>Eventos conectam tudo:</strong> o clique do usuário (HTML) é estilizado (CSS) e tratado (JS).</li>
+            </ul>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Como funciona?</h4>
+            <div class="diagram-box">
+                <ol>
+                    <li>O HTML entrega a estrutura inicial (ex.: um formulário).</li>
+                    <li>O CSS deixa essa estrutura bonita e organizada.</li>
+                    <li>O JS escuta o evento (ex.: "Adicionar") e atualiza o DOM.</li>
+                    <li>O resultado aparece na tela sem recarregar a página.</li>
+                </ol>
+            </div>
+            <pre class="code-example"><code>&lt;!-- Lista de tarefas: HTML + CSS + JS --&gt;
+&lt;input id="tarefa" type="text" placeholder="Nova tarefa"&gt;
+&lt;button id="adicionar"&gt;Adicionar&lt;/button&gt;
+&lt;ul id="lista"&gt;&lt;/ul&gt;
+
+&lt;style&gt;
+  #tarefa { padding: .4rem; margin-right: .5rem; }
+  #lista li { margin-top: .3rem; color: #1c314c; }
+&lt;/style&gt;
+
+&lt;script&gt;
+  const adicionar = document.getElementById('adicionar');
+  const tarefa = document.getElementById('tarefa');
+  const lista = document.getElementById('lista');
+
+  adicionar.addEventListener('click', () =&gt; {
+    if (!tarefa.value.trim()) return;
+    const item = document.createElement('li');
+    item.textContent = tarefa.value;
+    lista.appendChild(item);
+    tarefa.value = '';
+  });
+&lt;/script&gt;</code></pre>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Onde isso aparece?</h4>
+            <p>Em <strong>qualquer página interativa moderna</strong>: apps de tarefas, carrinhos de compra, timelines, formulários com validação instantânea.</p>
+
+            <h4 class="fw-bold mt-4 mb-1" style="color: var(--color-dark-blue);"><i class="fa-solid fa-book me-1"></i>Continue estudando</h4>
+            <p class="text-muted small mb-1">Materiais selecionados para aprofundar esta etapa.</p>
+
+            <div class="resource-grid">
+                <a class="resource-card" href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">MDN — Aprendendo desenvolvimento web</span>
+                    <p class="resource-desc">Trilha oficial da MDN cobrindo HTML, CSS e JavaScript juntos.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://www.theodinproject.com/paths/foundations" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type course"><i class="fa-solid fa-graduation-cap"></i>Curso</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇺🇸</span>
+                    </div>
+                    <span class="resource-title">The Odin Project — Foundations</span>
+                    <p class="resource-desc">Fundamentos com projetos práticos construindo com HTML, CSS e JS.</p>
+                    <span class="resource-btn">Abrir curso <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <div class="etapa-nav">
+                <button type="button" class="btn btn-primary" data-complete-step="etapa-06" style="background-color: var(--color-light-blue); border-color: var(--color-light-blue);">
+                    <i class="fa-solid fa-circle-check me-1"></i>Concluir etapa
+                </button>
+                <a class="btn btn-outline-secondary" href="#etapa-07">Próxima etapa: Responsividade <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </article>
+
+        <!-- ========== ETAPA 7 ========== -->
+        <article id="etapa-07" class="cap-section p-4 border rounded bg-white shadow-sm mb-4">
+            <div class="tr-step-head">
+                <div class="tr-step-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <div>
+                    <span class="tr-step-tag">Etapa 07 de 11</span>
+                    <h2>Responsividade</h2>
+                </div>
+            </div>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que é?</h4>
+            <p>Um site <strong>responsivo</strong> se adapta ao tamanho da tela — do celular ao monitor grande. Hoje é requisito básico: a maior parte do tráfego web vem de dispositivos móveis.</p>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que você precisa entender</h4>
+            <ul>
+                <li><strong>Viewport:</strong> a área visível do navegador no dispositivo.</li>
+                <li><strong>Media queries:</strong> regras CSS que valem só para certas larguras de tela.</li>
+                <li><strong>Unidades relativas:</strong> <code>%</code>, <code>rem</code>, <code>vw/vh</code> em vez de valores fixos.</li>
+                <li><strong>Flexbox e Grid:</strong> layouts que reorganizam os elementos sozinhos.</li>
+            </ul>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Como funciona?</h4>
+            <div class="diagram-box">
+                <ol>
+                    <li>Você declara a <strong>viewport</strong> no HTML.</li>
+                    <li>No CSS, usa flexbox/grid e unidades relativas.</li>
+                    <li>Acrescenta <strong>media queries</strong> para ajustar o layout em telas pequenas.</li>
+                    <li>O navegador aplica as regras conforme o tamanho da tela.</li>
+                </ol>
+            </div>
+            <pre class="code-example"><code>&lt;!-- No &lt;head&gt; do documento --&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+/* No CSS */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.card { flex: 1 1 240px; }
+
+@media (max-width: 600px) {
+  .card { flex-basis: 100%; }  /* empilha em telas pequenas */
+}</code></pre>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Onde isso aparece?</h4>
+            <p>Abra <strong>qualquer site moderno no celular e no desktop</strong>: menu vira hambúrguer, colunas empilham, imagens redimensionam. Tudo isso é responsividade.</p>
+
+            <h4 class="fw-bold mt-4 mb-1" style="color: var(--color-dark-blue);"><i class="fa-solid fa-book me-1"></i>Continue estudando</h4>
+            <p class="text-muted small mb-1">Materiais selecionados para aprofundar esta etapa.</p>
+
+            <button type="button" class="yt-card mb-3" data-yt-comp data-key="etapa-07" data-title="Vídeo da Etapa 7 — Responsividade">
+                <div class="yt-card-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div class="yt-card-body">
+                    <h5 class="yt-card-title">Vídeo da Etapa 7 — Responsividade</h5>
+                    <p class="yt-card-text">Clique para ver e assistir o vídeo embutido aqui mesmo.</p>
+                </div>
+                <div class="yt-card-count"><span data-yt-count>0</span> materiais</div>
+            </button>
+
+            <div class="resource-grid">
+                <a class="resource-card" href="https://www.w3schools.com/css/css_rwd_intro.asp" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇺🇸</span>
+                    </div>
+                    <span class="resource-title">W3Schools — Responsive Web Design</span>
+                    <p class="resource-desc">Introdução ao design responsivo com exemplos interativos.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://www.freecodecamp.org/portuguese/learn/2022/responsive-web-design/" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type course"><i class="fa-solid fa-graduation-cap"></i>Curso</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">freeCodeCamp — Design Responsivo</span>
+                    <p class="resource-desc">Certificação gratuita com projetos de HTML e CSS responsivo.</p>
+                    <span class="resource-btn">Abrir curso <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://cssgridgarden.com/" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type practice"><i class="fa-solid fa-gamepad"></i>Prática</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">Grid Garden</span>
+                    <p class="resource-desc">Jogo interativo para aprender CSS Grid (disponível em português).</p>
+                    <span class="resource-btn">Jogar agora <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <div class="etapa-nav">
+                <button type="button" class="btn btn-primary" data-complete-step="etapa-07" style="background-color: var(--color-light-blue); border-color: var(--color-light-blue);">
+                    <i class="fa-solid fa-circle-check me-1"></i>Concluir etapa
+                </button>
+                <a class="btn btn-outline-secondary" href="#etapa-08">Próxima etapa: O que é Front-end <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </article>
+
+        <!-- ========== ETAPA 8 ========== -->
+        <article id="etapa-08" class="cap-section p-4 border rounded bg-white shadow-sm mb-4">
+            <div class="tr-step-head">
+                <div class="tr-step-icon"><i class="fa-solid fa-display"></i></div>
+                <div>
+                    <span class="tr-step-tag">Etapa 08 de 11</span>
+                    <h2>O que é Front-end</h2>
+                </div>
+            </div>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que é?</h4>
+            <p><strong>Front-end</strong> é a parte da aplicação que o usuário vê e com a qual interage — tudo que roda no navegador. O <strong>back-end</strong> é a parte que roda no servidor (banco de dados, regras de negócio, autenticação). Os dois conversam via <strong>HTTP</strong>.</p>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que você precisa entender</h4>
+            <ul>
+                <li>Front-end = navegador (HTML, CSS, JS); back-end = servidor.</li>
+                <li><strong>Frameworks front-end</strong> (React, Vue, Angular) existem para organizar e escalar interfaces — <em>você não precisa aprendê-los agora</em>, mas saberá por que existem.</li>
+                <li>Um desenvolvedor <strong>full-stack</strong> atua nas duas pontas.</li>
+            </ul>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Como funciona?</h4>
+            <div class="diagram-box">
+                <ol>
+                    <li>O usuário abre a página: o <strong>front-end</strong> carrega no navegador.</li>
+                    <li>Quando precisa de dados, o front-end faz uma requisição ao <strong>back-end</strong>.</li>
+                    <li>O back-end consulta o banco, processa e devolve os dados.</li>
+                    <li>O front-end recebe e renderiza o resultado na tela.</li>
+                </ol>
+            </div>
+            <pre class="code-example"><code>        [ FRONT-END ]                 [ BACK-END ]
+    roda no navegador                 roda no servidor
+   HTML + CSS + JS             regras de negócio + banco de dados
+        │                                  │
+        └──────── requisição HTTP ────────►│
+        │◄──────── resposta (JSON) ───────┘
+        │
+   renderiza para o usuário</code></pre>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Onde isso aparece?</h4>
+            <p>É <strong>o que você está aprendendo nesta trilha</strong>. Esta própria página é um front-end — quando a CompActJr publica um site ou dashboard, o que o cliente vê é o front-end.</p>
+
+            <h4 class="fw-bold mt-4 mb-1" style="color: var(--color-dark-blue);"><i class="fa-solid fa-book me-1"></i>Continue estudando</h4>
+            <p class="text-muted small mb-1">Materiais selecionados para aprofundar esta etapa.</p>
+
+            <button type="button" class="yt-card mb-3" data-yt-comp data-key="etapa-08" data-title="Vídeos da Etapa 8 — O que é Front-end">
+                <div class="yt-card-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div class="yt-card-body">
+                    <h5 class="yt-card-title">Vídeos da Etapa 8 — O que é Front-end</h5>
+                    <p class="yt-card-text">Clique para ver e assistir os vídeos embutidos aqui mesmo.</p>
+                </div>
+                <div class="yt-card-count"><span data-yt-count>0</span> materiais</div>
+            </button>
+
+            <div class="resource-grid">
+                <a class="resource-card" href="https://app.rocketseat.com.br/discover" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type course"><i class="fa-solid fa-graduation-cap"></i>Curso</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">Rocketseat — Discover</span>
+                    <p class="resource-desc">Jornada gratuita da Rocketseat que começa pelo front-end e fundamentos.</p>
+                    <span class="resource-btn">Abrir curso <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://www.theodinproject.com/paths/full-stack-javascript" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type course"><i class="fa-solid fa-graduation-cap"></i>Curso</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇺🇸</span>
+                    </div>
+                    <span class="resource-title">The Odin Project — Full Stack JavaScript</span>
+                    <p class="resource-desc">Trilha completa de full-stack começando pelo front-end, em inglês.</p>
+                    <span class="resource-btn">Abrir curso <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <div class="etapa-nav">
+                <button type="button" class="btn btn-primary" data-complete-step="etapa-08" style="background-color: var(--color-light-blue); border-color: var(--color-light-blue);">
+                    <i class="fa-solid fa-circle-check me-1"></i>Concluir etapa
+                </button>
+                <a class="btn btn-outline-secondary" href="#etapa-09">Próxima etapa: APIs e comunicação <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </article>
+
+        <!-- ========== ETAPA 9 ========== -->
+        <article id="etapa-09" class="cap-section p-4 border rounded bg-white shadow-sm mb-4">
+            <div class="tr-step-head">
+                <div class="tr-step-icon purple"><i class="fa-solid fa-code-branch"></i></div>
+                <div>
+                    <span class="tr-step-tag">Etapa 09 de 11</span>
+                    <h2>APIs e comunicação</h2>
+                </div>
+            </div>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que é?</h4>
+            <p>Uma <strong>API (Interface de Programação de Aplicações)</strong> é a ponte que permite dois sistemas conversarem. Na web, as APIs <strong>REST</strong> expõem <em>endpoints</em> (URLs) que respondem dados em <strong>JSON</strong> — o formato de texto que todos os sistemas entendem.</p>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que você precisa entender</h4>
+            <ul>
+                <li><strong>Endpoints:</strong> URLs que representam recursos (ex.: <code>/usuarios</code>).</li>
+                <li><strong>Métodos HTTP:</strong> GET busca, POST cria, PUT atualiza, DELETE remove.</li>
+                <li><strong>JSON:</strong> <code>{ "chave": "valor" }</code> — como os dados trafegam.</li>
+                <li><strong>Consumo:</strong> no navegador, usamos <code>fetch()</code> para buscar dados de uma API.</li>
+            </ul>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Como funciona?</h4>
+            <div class="diagram-box">
+                <ol>
+                    <li>Seu código chama <code>fetch('https://api.site.com/usuarios')</code>.</li>
+                    <li>O navegador envia uma requisição <code>GET</code> ao endpoint.</li>
+                    <li>A API processa e responde com um <code>200</code> e o corpo em <strong>JSON</strong>.</li>
+                    <li>Você converte (<code>res.json()</code>) e manipula os dados no JavaScript.</li>
+                </ol>
+            </div>
+            <pre class="code-example"><code>const url = 'https://api.github.com/users/compactjr';
+
+fetch(url)                       // 1. faz a requisição GET
+  .then(res =&gt; res.json())       // 2. converte a resposta em JSON
+  .then(dados =&gt; {
+    console.log(dados.login, dados.public_repos); // 3. usa os dados
+  })
+  .catch(erro =&gt; console.error(erro));</code></pre>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Onde isso aparece?</h4>
+            <p>Em <strong>previsão do tempo, cotações, login com redes sociais, mapas e pagamentos</strong> — sempre que um site usa dados de outro serviço, há uma API por trás.</p>
+
+            <h4 class="fw-bold mt-4 mb-1" style="color: var(--color-dark-blue);"><i class="fa-solid fa-book me-1"></i>Continue estudando</h4>
+            <p class="text-muted small mb-1">Materiais selecionados para aprofundar esta etapa.</p>
+
+            <button type="button" class="yt-card mb-3" data-yt-comp data-key="etapa-09" data-title="Vídeo da Etapa 9 — APIs e comunicação">
+                <div class="yt-card-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div class="yt-card-body">
+                    <h5 class="yt-card-title">Vídeo da Etapa 9 — APIs e comunicação</h5>
+                    <p class="yt-card-text">Clique para ver e assistir o vídeo embutido aqui mesmo.</p>
+                </div>
+                <div class="yt-card-count"><span data-yt-count>0</span> materiais</div>
+            </button>
+
+            <div class="resource-grid">
+                <a class="resource-card" href="https://www.freecodecamp.org/portuguese/news/tutorial-de-apis-rest-client-rest-servicos-rest-e-chamadas-de-api-explicados-com-exemplos-de-codigo" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">freeCodeCamp — Tutorial de APIs REST</span>
+                    <p class="resource-desc">REST, clientes, serviços e chamadas de API explicados em português.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">MDN — O objeto JSON</span>
+                    <p class="resource-desc">Como usar <code>JSON.parse</code> e <code>JSON.stringify</code> no JavaScript.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <div class="etapa-nav">
+                <button type="button" class="btn btn-primary" data-complete-step="etapa-09" style="background-color: var(--color-light-blue); border-color: var(--color-light-blue);">
+                    <i class="fa-solid fa-circle-check me-1"></i>Concluir etapa
+                </button>
+                <a class="btn btn-outline-secondary" href="#etapa-10">Próxima etapa: Do código à aplicação <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </article>
+
+        <!-- ========== ETAPA 10 ========== -->
+        <article id="etapa-10" class="cap-section p-4 border rounded bg-white shadow-sm mb-4">
+            <div class="tr-step-head">
+                <div class="tr-step-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                <div>
+                    <span class="tr-step-tag">Etapa 10 de 11</span>
+                    <h2>Do código à aplicação</h2>
+                </div>
+            </div>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que é?</h4>
+            <p>Escrever código no seu computador é só o começo. Para virar um site acessível a todos, o projeto precisa ir para um <strong>servidor</strong>: é o <strong>deploy</strong> ou <strong>publicação</strong>. Isso envolve <strong>hospedagem</strong> (onde os arquivos ficam) e <strong>domínio</strong> (o endereço público).</p>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que você precisa entender</h4>
+            <ul>
+                <li><strong>Hospedagem:</strong> o servidor que armazena e entrega os arquivos do site.</li>
+                <li><strong>Domínio:</strong> o nome que as pessoas digitam (<code>www.suaempresa.com.br</code>).</li>
+                <li><strong>Deploy:</strong> o ato de publicar uma nova versão do código no servidor.</li>
+                <li>Conceitos de <strong>CI/CD e DevOps</strong> vêm depois — aqui basta entender o fluxo.</li>
+            </ul>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Como funciona?</h4>
+            <div class="diagram-box">
+                <ol>
+                    <li>Você desenvolve o site localmente.</li>
+                    <li>Publica os arquivos na hospedagem (painel da empresa, FTP ou Git).</li>
+                    <li>Aponta o domínio para a hospedagem (via DNS).</li>
+                    <li>Quando alguém acessa o domínio, o servidor entrega o site.</li>
+                </ol>
+            </div>
+            <pre class="code-example"><code>Seu computador ──► Hospedagem (servidor) ──► Internet
+   (código)          │                           │
+                     │ guarda os arquivos        │
+                     ▼                           ▼
+              Domínio: www.suaempresa.com.br ──► usuários acessam
+
+Passos: código ─► publicar/deploy ─► domínio apontando ─► site no ar</code></pre>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Onde isso aparece?</h4>
+            <p>Quando a <strong>CompActJr publica um site da empresa</strong>, quando você sobe um portfólio no GitHub Pages ou em qualquer serviço de hospedagem. Cada nova versão publicada é um deploy.</p>
+
+            <h4 class="fw-bold mt-4 mb-1" style="color: var(--color-dark-blue);"><i class="fa-solid fa-book me-1"></i>Continue estudando</h4>
+            <p class="text-muted small mb-1">Materiais selecionados para aprofundar esta etapa.</p>
+
+            <button type="button" class="yt-card mb-3" data-yt-comp data-key="etapa-10" data-title="Vídeo da Etapa 10 — Do código à aplicação">
+                <div class="yt-card-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div class="yt-card-body">
+                    <h5 class="yt-card-title">Vídeo da Etapa 10 — Do código à aplicação</h5>
+                    <p class="yt-card-text">Clique para ver e assistir o vídeo embutido aqui mesmo.</p>
+                </div>
+                <div class="yt-card-count"><span data-yt-count>0</span> materiais</div>
+            </button>
+
+            <div class="resource-grid">
+                <a class="resource-card" href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Getting_started/Your_first_website/Publishing_your_website" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">MDN — Publicando seu site</span>
+                    <p class="resource-desc">Como colocar seu site no ar, passo a passo, em português.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://www.hostinger.com/br/tutoriais/como-fazer-o-upload-do-seu-website" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">Hostinger — Como colocar seu site online</span>
+                    <p class="resource-desc">Tutorial prático de hospedagem e upload em português.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://nerdweb.com.br/glossario/deploy/" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type doc"><i class="fa-solid fa-book"></i>Documentação</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">Nerdweb — Glossário: Deploy</span>
+                    <p class="resource-desc">O que é deploy e como ele se encaixa no fluxo de desenvolvimento.</p>
+                    <span class="resource-btn">Abrir material <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <div class="etapa-nav">
+                <button type="button" class="btn btn-primary" data-complete-step="etapa-10" style="background-color: var(--color-light-blue); border-color: var(--color-light-blue);">
+                    <i class="fa-solid fa-circle-check me-1"></i>Concluir etapa
+                </button>
+                <a class="btn btn-outline-secondary" href="#etapa-11">Próxima etapa: Mapa do desenvolvimento web <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </article>
+
+        <!-- ========== ETAPA 11 ========== -->
+        <article id="etapa-11" class="cap-section p-4 border rounded bg-white shadow-sm mb-4">
+            <div class="tr-step-head">
+                <div class="tr-step-icon violet"><i class="fa-solid fa-map"></i></div>
+                <div>
+                    <span class="tr-step-tag">Etapa 11 de 11</span>
+                    <h2>Mapa do desenvolvimento web</h2>
+                </div>
+            </div>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que é?</h4>
+            <p>Você completou os fundamentos. Este é o <strong>mapa</strong> dos caminhos possíveis a partir daqui — cada um parte exatamente do que você aprendeu nesta trilha. Escolha um, mas saiba que todos se apoiam na mesma base.</p>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">O que você precisa entender</h4>
+            <ul>
+                <li>Os caminhos não são excludentes: front-end, back-end e DevOps se complementam.</li>
+                <li>Na CompActJr, o próximo passo natural é <strong>Dominando CSS</strong> e <strong>JavaScript Moderno</strong> na trilha de Programação Web.</li>
+                <li>Frameworks (React, Vue, Angular) fazem sentido <strong>depois</strong> de dominar o JavaScript puro.</li>
+            </ul>
+
+            <h4 class="fw-bold mt-3 mb-2" style="color: var(--color-medium-blue);">Caminhos possíveis</h4>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="tr-map-card">
+                        <div class="tr-map-head"><i class="fa-solid fa-palette"></i><h5>Dominando CSS</h5></div>
+                        <p>Responsividade avançada, Flexbox, Grid, animações e boas práticas de layout.</p>
+                        <a class="tr-map-status" href="../index.html">Na trilha Programação Web · Em breve</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="tr-map-card">
+                        <div class="tr-map-head"><i class="fa-brands fa-js"></i><h5>JavaScript Moderno</h5></div>
+                        <p>ES6+, manipulação avançada do DOM, eventos e consumo de APIs.</p>
+                        <a class="tr-map-status" href="../index.html">Na trilha Programação Web · Em breve</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="tr-map-card">
+                        <div class="tr-map-head"><i class="fa-brands fa-react"></i><h5>Frameworks Frontend</h5></div>
+                        <p>React, Vue ou Angular para interfaces ricas, reutilizáveis e escaláveis.</p>
+                        <a class="tr-map-status" href="../index.html">Na trilha Programação Web · Em breve</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="tr-map-card">
+                        <div class="tr-map-head"><i class="fa-solid fa-server"></i><h5>Desenvolvimento Backend</h5></div>
+                        <p>APIs, banco de dados e lógica de negócio que rodam no servidor.</p>
+                        <a class="tr-map-status available" href="../../desenvolvimento-backend/index.html">Trilha disponível no TechBlog</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="tr-map-card">
+                        <div class="tr-map-head"><i class="fa-solid fa-gears"></i><h5>Infraestrutura e DevOps</h5></div>
+                        <p>Servidores, deploy, automação e como manter aplicações no ar.</p>
+                        <a class="tr-map-status available" href="../../devops-infra/index.html">Trilha disponível no TechBlog</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="tr-map-card">
+                        <div class="tr-map-head"><i class="fa-solid fa-brain"></i><h5>IA e Análise de Dados</h5></div>
+                        <p>Programação aplicada a dados, modelos e inteligência artificial.</p>
+                        <a class="tr-map-status available" href="../../ia-analise/index.html">Trilha disponível no TechBlog</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="tr-map-card">
+                        <div class="tr-map-head"><i class="fa-solid fa-layer-group"></i><h5>Full-Stack</h5></div>
+                        <p>Unir front-end e back-end em aplicações completas, do banco ao navegador.</p>
+                        <a class="tr-map-status available" href="https://www.theodinproject.com/paths/full-stack-javascript" target="_blank" rel="noopener">The Odin Project · Full Stack JS</a>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="fw-bold mt-4 mb-1" style="color: var(--color-dark-blue);"><i class="fa-solid fa-book me-1"></i>Continue estudando</h4>
+            <p class="text-muted small mb-1">Materiais para seguir depois dos fundamentos.</p>
+
+            <div class="resource-grid">
+                <a class="resource-card" href="https://www.theodinproject.com/paths/foundations" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type course"><i class="fa-solid fa-graduation-cap"></i>Curso</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇺🇸</span>
+                    </div>
+                    <span class="resource-title">The Odin Project — Foundations</span>
+                    <p class="resource-desc">Próximo nível dos fundamentos com projetos práticos em inglês.</p>
+                    <span class="resource-btn">Abrir curso <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://app.rocketseat.com.br/discover" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type course"><i class="fa-solid fa-graduation-cap"></i>Curso</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">Rocketseat — Discover</span>
+                    <p class="resource-desc">Trilha gratuita em português com o caminho completo do front-end.</p>
+                    <span class="resource-btn">Abrir curso <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a class="resource-card" href="https://www.freecodecamp.org/portuguese/" target="_blank" rel="noopener">
+                    <div class="resource-meta">
+                        <span class="resource-type course"><i class="fa-solid fa-graduation-cap"></i>Curso</span>
+                        <span class="resource-badge">Iniciante</span>
+                        <span class="resource-badge">🇧🇷</span>
+                    </div>
+                    <span class="resource-title">freeCodeCamp (em português)</span>
+                    <p class="resource-desc">Certificações gratuitas de design responsivo, JavaScript e full-stack.</p>
+                    <span class="resource-btn">Abrir curso <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <div class="etapa-nav">
+                <button type="button" class="btn btn-primary" data-complete-step="etapa-11" style="background-color: var(--color-light-blue); border-color: var(--color-light-blue);">
+                    <i class="fa-solid fa-circle-check me-1"></i>Concluir etapa
+                </button>
+                <a class="btn btn-outline-secondary" href="#glossario">Ver glossário da trilha <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </article>
+
+        <!-- ===================== GLOSSÁRIO ===================== -->
+        <section id="glossario" class="p-4 border rounded bg-white shadow-sm mb-4">
+            <div class="d-flex align-items-center mb-1">
+                <i class="fa-solid fa-book-open me-2 display-6" style="color: var(--color-light-violet);"></i>
+                <h2 class="fw-bold mb-0" style="color: var(--color-dark-blue);">Glossário rápido</h2>
+            </div>
+            <p class="text-muted mb-3">Os termos que você viu ao longo da trilha, em um só lugar.</p>
+
+            <div class="tr-glossary">
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>URL</dt>
+                        <dd>Endereço de um recurso na web, como https://site.com/pagina.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>DNS</dt>
+                        <dd>Sistema que traduz nomes de domínio em endereços de IP.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>IP</dt>
+                        <dd>Endereço numérico que identifica um computador na rede.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>HTTP / HTTPS</dt>
+                        <dd>Protocolo de comunicação web; HTTPS é a versão cifrada e segura.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>Servidor</dt>
+                        <dd>Computador que guarda e entrega sites e dados na internet.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>Cliente</dt>
+                        <dd>Programa que consome recursos, como o navegador.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>HTML</dt>
+                        <dd>Linguagem de marcação que estrutura o conteúdo da página.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>CSS</dt>
+                        <dd>Linguagem de estilo que controla a aparência da página.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>JavaScript</dt>
+                        <dd>Linguagem de programação que dá comportamento às páginas.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>DOM</dt>
+                        <dd>Árvore de objetos que o navegador monta a partir do HTML.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>Tag</dt>
+                        <dd>Marcador do HTML que define um elemento, como &lt;p&gt;.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>Atributo</dt>
+                        <dd>Informação extra de uma tag, como href ou src.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>Seletor</dt>
+                        <dd>Padrão do CSS que escolhe quais elementos serão estilizados.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>Media Query</dt>
+                        <dd>Regra CSS que se aplica conforme o tamanho da tela.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>Responsivo</dt>
+                        <dd>Site que se adapta a diferentes tamanhos de tela.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>API</dt>
+                        <dd>Interface que permite dois sistemas se comunicarem.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>JSON</dt>
+                        <dd>Formato de texto usado para trocar dados entre sistemas.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>Front-end</dt>
+                        <dd>Parte da aplicação que roda no navegador, o que o usuário vê.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>Back-end</dt>
+                        <dd>Parte que roda no servidor: banco de dados e regras de negócio.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>Hospedagem</dt>
+                        <dd>Serviço que armazena e entrega os arquivos de um site.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>Domínio</dt>
+                        <dd>Nome público de um site, como suaempresa.com.br.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>Deploy</dt>
+                        <dd>Ato de publicar uma nova versão do código no servidor.</dd>
+                    </dl>
+                </div>
+                <div class="tr-glossary-item">
+                    <dl class="mb-0">
+                        <dt>Framework</dt>
+                        <dd>Conjunto de ferramentas que acelera o desenvolvimento de apps.</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <div class="text-center mt-4">
+            <a href="../index.html" class="btn btn-lg fw-bold" style="background-color: var(--color-light-blue); color: var(--color-white);">
+                <i class="fa-solid fa-arrow-left me-2"></i>Voltar para a trilha de Programação Web
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center mt-auto">
+        <div class="container">
+            <p class="mb-2">&copy; 2026 CompActJr. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://github.com/compactjr" target="_blank" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/company/compactjr" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Draggable Timeline -->
+    <script src="../../../assets/js/timeline-drag.js"></script>
+    <!-- Timeline Tabs -->
+    <script src="../../../assets/js/capacitacao-tabs.js"></script>
+    <!-- Custom Search Script (Stubbed) -->
+    <script src="../../../assets/js/search-stub.js"></script>
+    <!-- Central Resources Data (JSON com os links) -->
+    <script src="../../../assets/data/resources.js"></script>
+    <!-- YouTube Player Component -->
+    <script src="../../../assets/js/player-modal.js"></script>
+    <!-- Trilha Progress (localStorage) -->
+    <script src="../../../assets/js/trilha-progress.js"></script>
+</body>
+</html>
